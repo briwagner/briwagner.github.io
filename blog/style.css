@@ -1,0 +1,18 @@
+main  {
+  padding: 0 10%;
+  margin-bottom:60px;
+}
+
+body {
+  background-color: #efefef;
+}
+
+p {
+  font-size:20px;
+  line-height: 1.3em;
+  margin-top:10px;
+}
+
+h2 {
+  margin: 14px 0;
+}
