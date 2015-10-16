@@ -26,6 +26,7 @@ header {
 }
 
 .head-links {
+	display: inherit;
 }
 
 .text-right {
