@@ -8,11 +8,13 @@
 
   <body>
     <div class="container">
-      <header>
+      <div id="header" class="brd-bottom">
         <div class="row">
           <div class="head-logo">
-            <img src="#" alt="logo">
-            <h2 class="inline">Welcome to Brian's Site</h2>
+            <a href="index.html">
+              <img src="imgs/b_logo2.jpg" alt="logo" class="logo-img">
+            </a>
+            <h2 class="disp-inline">Welcome to Brian's Site</h2>
           </div>
           <div class="head-links text-right">
             <nav>
@@ -23,31 +25,39 @@
             </nav>
           </div>
         </div>
-      </header>
-  
+      </div>
+      
+      <div class="spacer bkg-white">
+      </div>
+      
       <main>
-        <div id="container-main">
-          <div class="fl-left half-row">
-            <div class="text-box">
-              <h1>Featured Blog Post</h1>
-                <h2>Tech Themes - Control Yourself and Others</h2>
-                <p>Posted: October 4, 2015</p>
-                <h3>The Benefits of Control</h3>
-                <p>Version control is like living for today and not giving up the past. Version control is when each of us gets our own way, and the group stays happy. Version control is being in two places at once.</p>
-                <p><a href="#" class="link-bold">Read more</a></p>
+        <div id="container-main" class="brd-bottom">
+          <div class="row">
+            <div class="fl-left half-row ht-lg">
+              <div class="main-article-border ht-lg-pad">
+                <h1 class="article-header article-padding">Featured Blog Post</h1>
+                  <h2 class="article-padding">Tech Themes - Control Yourself and Others</h2>
+                  <p class="article-padding">Posted: October 4, 2015</p>
+                  <h3 class="article-padding">The Benefits of Control</h3>
+                  <p class="article-padding">Version control is like living for today and not giving up the past. Version control is when each of us gets our own way, and the group stays happy. Version control is being in two places at once.</p>
+                  <p class="article-padding"><a href="#" class="link-bold">Read more</a></p>
+                </div>
               </div>
-            </div>
-            <div class="fl-right half-row">
-              <img src="imgs/haitiShore.jpg" alt="Filming in Haiti" class="pic-wide">
-            </div>
+              <div class="fl-right half-row main-article-border ht-lg-pad half-row-pic-cover">
+                <div class="pic-container-main">
+                </div>
+              </div>
+              <div class="spacer bkg-white">
+              </div>
+          </div>
         </div>   
       </main>
     
       <div class="spacer">
       </div>
     
-      <section class="row">
-        <div class="triplet center round-box">
+      <div class="row">
+        <div class="triplet center brd-full-primary round-box antique">
           <h2>Blog</h2>
           <ul class="no-list">
             <li><a href="#" class="link-bold">First Blog Link</a></li>
@@ -55,7 +65,7 @@
           </ul>
         </div>
   
-        <div class="triplet center round-box antique">
+        <div class="triplet center brd-full-primary round-box antique">
           <h2>Projects</h2>
           <ul class="no-list">
               <li><a href="#" class="link-bold">First Project</a>
@@ -63,28 +73,39 @@
           </ul>
         </div>
 
-        <div class="triplet center round-box">
+        <div class="triplet center brd-full-primary round-box antique">
           <h2>Videos</h2>
           <ul class="no-list">
             <li><a href="#" class="link-bold">First Video link</a></li>
             <li><a href="#" class="link-bold">Second Video link</a></li>
           </ul>
           </div>
-      </section>
+      </div>
   
     <div class="spacer">
       </div>
   
-      <aside class="full-size" id="wide-picture">
-        <h2>Places | Pics</h2>
-        <p><a href="#" class="link-bold">One place</a></p>
+      <aside>
+        <div class="row">
+          <h2 class="article-padding">Places | Pics</h2>
+          <div class="ht-md pic-cover brd-top brd-bottom">
+            <div class="label-box fl-right">
+              <a href="#" class="link-bold">
+                <p class="label-text">Pinnacles National Park</p>
+                <p class="label-text">Central California</p>
+              </a>
+            </div>
+          </div>
+        </div>
       </aside>
   
     <div class="spacer">
     </div>
   
       <footer>
-        <p class="center">Made by Brian Wagner | &#169; 2015</p>
+        <div class="footer">
+          <p class="center">Made by Brian Wagner | &#169; 2015</p>
+        </div>
       </footer>
     </div>
   </body>

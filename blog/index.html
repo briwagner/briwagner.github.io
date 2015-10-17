@@ -2,35 +2,81 @@
 <html>
   <head>
       <meta charset="utf-8" />
-      <title>Brian's Blog Entries</title>
+      <title>Brian's Site</title>
+      <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+      <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
     </head>
 
   <body>
-    <header>
-      Welcome to Brian's Site ||
-      <nav>
-        <ul>
-          <li><a href="blog/index.html">Blog</a> |</li>
-          <li><a href="#">Projects</a> |</li>
-          <li><a href="#">Videos</a> |</li>
-          <li><a href="#">Places</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <section>
-      <h1>Blog Entries</h1>
-        <article>
-          <h2>The Benefits of Control</h2>
-          <p>Posted: October 4, 2015</p>
-          <p>Version control is like living for today and not giving up the past. Version control is when each of us gets our own way, and the group stays happy. Version control is being in two places at once.</p>
-          <p><a href="git.html">Read more</a></p>
-        </article>
-    </section>
-
-    <footer>
-      <p>Made by Brian Wagner | &#169; 2015</p>
-    </footer>
-
+    <div class="container">
+      <div id="header" class="brd-bottom">
+        <div class="row">
+          <div class="head-logo">
+             <a href="../index.html">
+              <img src="../imgs/b_logo2.jpg" alt="logo" class="logo-img">
+             </a>
+            <h2 class="disp-inline">Welcome to Brian's Site</h2>
+          </div>
+          <div class="head-links text-right">
+            <nav>
+              <a href="blog/index.html" class="navlink">Blog</a>
+              <a href="#" class="navlink">Projects</a>
+              <a href="#" class="navlink">Videos</a>
+              <a href="#" class="navlink">Places</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+      
+      <main>
+        <div class="row bkg-white brd-bottom">
+          <div class="row-70 fl-left">
+            <h1 class="article-padding">Blog Entries</h1>
+              <article class="article-padding">
+                <h2>The Benefits of Control</h2>
+                <p>Posted: October 4, 2015</p>
+                <p>Version control is like living for today and not giving up the past. Version control is when each of us gets our own way, and the group stays happy. Version control is being in two places at once.</p>
+                <p>As if that wasn't crystal clear, let's add that version control is how developer teams all stay on top of the game, even when people are doing their own thing. It allows individuals to work on a project without slowing down or affecting the work of others. It allows bugs to be quickly identified and isolated. It allows people in different places to work at their speed and in disparate directions, while still pushing toward the same goal. It allows great minds to work at their best, without the technology getting in the way.</p>
+                <h2>Ch-ch-changes</h2>
+                <p>We all want to believe that the longer we work on something, the better it should be. Working on complicated systems like computer programs can show us that's not always true. If I spend all morning writing code to improve something on the right side, I will be crushed to see that my changes also succeeded in breaking something on the left. Ugh. With git, that disappointment should last only as long as it takes me to compare the latest code to my last commit, and isolate the problem.</p>
+                <p>Any person who has used "track changes" in Word will be blown away by the visual display of changes on Github. It's so clear to see how text was added here, or removed here, as well as to have access to the informative justifications that are often included in each commit. This is especially important when my team members are far away. I don't have to make a long phone call to another time zone to learn what my colleague did and why. Github will show me, instantly. And if I realize that all those changes I did this morning are for naught? Well I can roll back to my previous commit, and pretend none of that ever happened. That's the best part of tracking changes with version control.</p>
+                <h2>Keep it on the 'hub</h2>
+                <p>Contrary to what the song says, some of the best things in life <em>are</em> free. And that's true with Github.* It lets us host our public repo's, make commits, fork, share, download, upload, restore our files, and all for free. If you work alone, use Github to store your repo's and consider it a hosted backup. Super cool. If you're working with a team, you stores your code there because it takes each team member a couple commands to stay up to date with the code base, and to instantly share her code with the rest of the team. No emailing dropbox URL's or putting files up on an ftp server. It's just there. Push, pull, clone, and git does the rest.</p>
+                <p class="text-sm">*Charges apply on private repo's</p>
+              </article>
+          </div>
+          <div class="row-30 fl-right bkg-floral">
+            <h3 class="article-padding">More Blogs</h3>
+            <ul class="no-list article-padding">
+              <li>Link</li>
+              <li>Link 2</li>
+            </ul>
+          </div>
+        </div>
+      </main>
+      
+      <aside>
+        <div class="row">
+          <h2 class="article-padding">Places | Pics</h2>
+          <div class="ht-md pic-cover brd-top brd-bottom">
+            <div class="label-box fl-right">
+              <a href="#" class="link-bold">
+                <p class="label-text">Pinnacles National Park</p>
+                <p class="label-text">Central California</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+  
+    <div class="spacer">
+    </div>
+  
+      <footer>
+        <div class="footer">
+          <p class="center">Made by Brian Wagner | &#169; 2015</p>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
