@@ -17,3 +17,11 @@
 .bkg-floral {
 	background-color: floralwhite;
 }
+
+.sidebar-pic {
+  float:right;
+  width:30%;
+  height:auto;
+  padding:5px;
+  margin: 0;
+}
