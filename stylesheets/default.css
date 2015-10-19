@@ -274,3 +274,14 @@ ul {
 	font-size: 115%;
 	margin:0;
 }
+
+.social-links {
+	display:inline-flex;
+	list-style-type: none;
+}
+
+.social-links img {
+	height:40px;
+	width:auto;
+	margin: 5px;
+}

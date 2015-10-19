@@ -25,3 +25,16 @@
   padding:5px;
   margin: 0;
 }
+
+
+aside ul {
+	margin-bottom:20px;
+}
+
+aside {
+	padding-top: 15px;
+}
+
+aside li {
+	padding-bottom: 15px;
+}
