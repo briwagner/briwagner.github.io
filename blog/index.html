@@ -1,10 +1,13 @@
 <!DOCTYPE HTML>
-<html>
+<html ng-app="blogLinks">
   <head>
       <meta charset="utf-8" />
       <title>Brian's Site</title>
       <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
       <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+      <script src="../scripts/blog-links.js"></script>
     </head>
 
   <body>
@@ -46,16 +49,26 @@
               </article>
           </div>
           <aside>
-            <div class="row-30 fl-right bkg-floral">
+            <div class="row-30 fl-right bkg-floral"  ng-controller="blogPostCtrl">
               <h3 class="article-padding">More Blogs</h3>
-              <ul class="no-list article-padding">
-                <li><a href="css-concepts.html">Printing Press to CSS</a></li>
-                <li><a href="git.html">Benefits of Control</a></li>
-              </ul>
+              <div>
+                <ul class="no-list article-padding"  ng-repeat="blogPost in blogPosts">
+                  <li><a href="{{ blogPost.href }}">{{ blogPost.title }}</a></li>
+                </ul>
+              </div>
             </div>
           </aside>
         </div>
       </main>
+      
+      <script>
+        angular.module('blogLinks', []).controller('blogPostCtrl', BlogPostCtrl);
+        
+        function BlogPostCtrl($scope) {
+          $scope.blogPosts = blogPosts;
+        }
+        
+      </script>
 
       <aside>
         <div class="row">
