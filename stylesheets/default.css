@@ -285,3 +285,66 @@ ul {
 	width:auto;
 	margin: 5px;
 }
+
+/* media queries be here !! */
+
+@media (max-width: 768px) { 
+	
+	.fl-left, .fl-right {
+		float:none;
+	}
+	
+	.half-row {
+		width:98%;
+	}
+	
+	.triplet {
+		width:98%;
+		margin-left:5px;
+		padding-top:0.5em;
+		padding-bottom:0.5em;
+	}
+
+	.triplet h2 {
+		margin: 0.2em 0;
+	}
+
+	#header {
+		text-align: center;
+	}
+
+	.head-logo {
+		width:98%;
+		float:none;
+		margin-bottom:15px;
+	}
+	
+	.navlink {
+		display:block;
+		text-align:center;
+		border:none;
+		font-size:1.2em;
+	}
+	
+	.article-header {
+		text-align:center;
+	}
+	
+	.logo-img {
+		float:none;
+	}
+	
+	.label-box {
+		height: 60px;
+		top: 73%;
+		width:250px;
+		font-size:90%;
+		background: rgba(222,166,69, 0.6);
+		box-shadow:none;
+	}
+	
+	.label-text {
+		padding:0.3em 0 0.1em 1em;
+	}
+		
+ }
