@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>Brian's Site - Arrays and Hashes</title>
+      <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+      <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+    </head>
+
+  <body>
+    <div class="container">
+      <div id="header" class="brd-bottom">
+        <div class="row">
+          <div class="head-logo">
+             <a href="../index.html">
+              <img src="../imgs/b_logo2.jpg" alt="logo" class="logo-img">
+             </a>
+            <h2 class="disp-inline">Welcome to Brian's Site</h2>
+          </div>
+          <div class="head-links text-right">
+            <nav>
+              <a href="index.html" class="navlink">Blog</a>
+              <a href="../projects.html" class="navlink">Projects</a>
+              <a href="../videos.html" class="navlink">Videos</a>
+              <a href="../places.html" class="navlink">Places</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <div class="row bkg-white brd-bottom">
+          <div class="row-70 fl-left">
+            <h1 class="article-padding">Blog Entries</h1>
+              <article class="article-padding">
+                <h1>What's on Your Keychain?</h1>
+                <h4>October 24, 2015</h4>
+                <p><img src="../imgs/keyringCrop.jpg" alt="keyring" class="sidebar-pic">My kids think I'm obsessive about my keys. Sometimes riding bikes, my kids will see me pat my rear pocket periodically to make sure my keys are still there. "Pops, your keys are fine." I dropped them down an elevator shaft one time, so allow me some leeway. Anyway, I have a few keys, not a ton, like a janitor or a roadie for a rockband. To those guys, keys are life. The little gold one opens the bus, the medium bronze one opens the mic cabinet, the big silver one is for the beer locker. I'm just speculating what a rock band needs to lock up. So when someone yells, "Hey, Jessie, open up the tour bus," then Jesse's hand swings instinctively to the pocket where his keys are and grabs 'em. Whenever he grabs for his keys, he knows where they are, and what they do: they open stuff.</p>
+
+                <p>Wallets are another thing most guys can be a little obsessive about. You don't want to lose that, cause there goes all the money and credit cards for buying beer at the concert. For me, the wallet's on the left, keys on the right. Always. Wallet left, keys right. When I grab my keys, I'm opening stuff. When I grab my wallet ... I could be doing a number of different things. Maybe I need to check a receipt, or pay for something, or check out a library book or find a phone number on a slip of paper. If everything on a keyring does the same thing, then most of the stuff in my wallet does something different.</p>
+
+                <p>In programming, we love to collect stuff. Sometimes on a keyring, where everthing is the same. And sometimes it's in a wallet where everything is a little different.</p>
+
+                <p>The programmer's keyring is called an array. It holds words, numbers, most objects that Ruby recognizes. In many cases, it's best practice to hold just one kind of thing in an array, either numbers or words. And only things that are related for some reason. So like, an array of numbers you came across on Tuesday is silly. But an array of invoice amounts that you sent to the boss makes more sense. With an array, we can call on the whole keyring when we want, or just an individual key on the ring. Each element in the array gets a number, like first, second or third, and we use that to access each element. keyring[1] is for my bike, keyring[2] for the house, ...</p>
+
+                <p>As in life, not all of our data will fit into neat little packages, so we turn to our hash-wallet to store all that different stuff. It stores data in one list, like an array does. But instead of giving each item a sequential number, we can give each of those little data bits a unique name. So library_card is my card number; drivers_license is my license number; business_card is the name on the card I got last night. I don't have to remember what order those things have, like first, second or third. I can just say wallet[:library_card] and get that card number to check out my book.</p>
+
+            </article>
+          </div>
+          <aside>
+            <div class="row-30 fl-right bkg-floral">
+              <h3 class="article-padding">More Blogs</h3>
+              <ul class="no-list article-padding">
+                <li><a href="css-concepts.html">Printing Press to CSS</a></li>
+                <li><a href="git.html">Benefits of Control</a></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </main>
+
+      <aside>
+        <div class="row">
+          <h2 class="article-padding">Places | Pics</h2>
+          <div class="ht-md pic-cover brd-top brd-bottom">
+            <div class="label-box fl-right">
+              <a href="#" class="link-bold">
+                <p class="label-text">Pinnacles National Park</p>
+                <p class="label-text">Central California</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    <div class="spacer">
+    </div>
+
+      <footer>
+        <div class="footer">
+          <!-- social media links -->
+          <div class="center">
+            <ul class="social-links center">
+              <li><a href="https://www.linkedin.com/in/brianwagnerfilm"><img src="../imgs/linkedin.png" alt="linkedin link"></a></li>
+              <li><a href="https://github.com/hazelmaeby"><img src="../imgs/github.jpg" alt="github link"></a></li>
+              <li><a href="https://twitter.com/hazelmaeby"><img src="../imgs/twitter.jpg" alt="twitter link"></a></li>
+            </ul>
+          </div>
+          <p class="center">Made by Brian Wagner | &#169; 2015</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
