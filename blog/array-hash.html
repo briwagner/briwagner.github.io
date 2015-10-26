@@ -47,7 +47,33 @@
 
                 <p>The programmer's keyring is called an array. It holds words, numbers, most objects that Ruby recognizes. In many cases, it's best practice to hold just one kind of thing in an array, either numbers or words. And only things that are related for some reason. So like, an array of numbers you came across on Tuesday is silly. But an array of invoice amounts that you sent to the boss makes more sense. With an array, we can call on the whole keyring when we want, or just an individual key on the ring. Each element in the array gets a number, like first, second or third, and we use that to access each element. keyring[1] is for my bike, keyring[2] for the house, ...</p>
 
+                <div class="code-well">
+                  <h4 class="center">Arrays</h4>
+                  <p>keyring = ["silver", "gold", "bronze", "light-gray", "dark-gray", "white"]</p>
+                  <p>keyring[1] ==> "gold"</p>
+                  <p>keyring[4] ==> "dark-gray"</p>
+                  <p>keyring[-1] ==> "white"</p>
+                  <p>house(keyring[2]) ==> <em>call a method to unlock the house</em></p>
+
+                </div>
+
                 <p>As in life, not all of our data will fit into neat little packages, so we turn to our hash-wallet to store all that different stuff. It stores data in one list, like an array does. But instead of giving each item a sequential number, we can give each of those little data bits a unique name. So library_card is my card number; drivers_license is my license number; business_card is the name on the card I got last night. I don't have to remember what order those things have, like first, second or third. I can just say wallet[:library_card] and get that card number to check out my book.</p>
+
+                <div class="code-well">
+                  <h4 class="center">Hashes</h4>
+                  <p>my_wallet = { "credit_card" => 1234, "library_card" => 4321, "random_phone_no" => 411}</p>
+                  <p><em>can me more readable as:</em>
+                  <p>my_wallet = {</p>
+                  <p>"credit_card" => 1234,</p>
+                  <p> "library_card" => 4321, </p>
+                  <p>"random_phone_no" => 411</p>
+                  <p>}</p>
+
+                  <p>my_wallet[:drivers_license] = 99844</p>
+                  <p>==> <em>add a new key/value pair</em></p>
+                  <p>puts my_wallet[:favorite_quotation_note]</p>
+                  <p> ==> "Show 'em you're a tiger."</p>
+                </div>
 
             </article>
           </div>
