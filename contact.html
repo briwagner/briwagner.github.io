@@ -2,8 +2,9 @@
 <html>
   <head>
       <meta charset="utf-8" />
-      <title>Brian's Videos</title>
+      <title>Brian's Contact Form</title>
       <link rel="stylesheet" type="text/css" href="stylesheets/default.css">
+      <link rel="stylesheet" type="text/css" href="stylesheets/form.css">
       <link rel="icon" type"image/png" href="imgs/bri_favicon.ico"
     </head>
 
@@ -31,14 +32,28 @@
       <div class="spacer bkg-white">
       </div>
 
+      <!-- main content here -->
       <main>
-        <div class="row bkg-white">
-          <h1>Videos</h1>
+        <div class="row bkg-white article-padding center">
+          <article class="center-70 cream-bkg">
+          <h1>Contact</h1>
+            <form id="contact-form" method="post" action="acknowledge.php">
+              <ul>
+                <li><label for="name">Name:</label></li>
+                <li><input type="text" name="name" id="name" placeholder="Name"/></li>
+                <li><label for="email">Email:</label></li>
+                <li><input type="text" name="email" id="email" placeholder="Email"/></li>
+                <li><label for="message">Message:</label></li>
+                <li><textarea name="message" id="message" cols="50" rows="13" placeholder="Message"></textarea></li>
+                <li><button type="submit" name="send">Send!</button></li>
+              </ul>
+            </form>
+          </article>
+          <div class="spacer"> </div>
         </div>
       </main>
 
-      <div class="spacer">
-      </div>
+      <div class="spacer"> </div>
 
       <div class="row">
         <div class="triplet center brd-full-primary round-box antique">
@@ -88,7 +103,7 @@
 
       <footer>
         <div class="footer">
-        <!-- social media links -->
+          <!-- social media links -->
           <div class="center">
             <ul class="social-links center">
               <li><a href="https://www.linkedin.com/in/brianwagnerfilm"><img src="imgs/linkedin.png" alt="linkedin link"></a></li>
