@@ -10,8 +10,13 @@
   font-size: 1.5em;
 }
 
+#contact-form input, textarea {
+  font-size: 1.5em;
+}
+
 #contact-form button {
   font-size: 1.5em;
+  border-radius: 5px 5px 5px;
 }
 
 .center-70 {
