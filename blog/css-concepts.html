@@ -5,9 +5,12 @@
       <title>Brian's Site</title>
       <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
       <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
-      
+
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
       <script src="../scripts/blog-links.js"></script>
+
+      <link rel="icon" type"image/png" href="../imgs/bri_favicon.ico"
+
     </head>
 
   <body>
@@ -63,14 +66,14 @@
           </aside>
         </div>
       </main>
-      
+
       <script>
         angular.module('blogLinks', []).controller('blogPostCtrl', BlogPostCtrl);
-        
+
         function BlogPostCtrl($scope) {
           $scope.blogPosts = blogPosts;
         }
-        
+
       </script>
 
       <aside>
