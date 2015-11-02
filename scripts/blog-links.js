@@ -1,5 +1,9 @@
 var blogPosts = [
 	{
+    href: "Enumerables.html",
+    title: "24 Frames a Second"
+  },
+  {
     href: "array-hash.html",
     title: "What's on Your Keychain?"
   },
