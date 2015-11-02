@@ -40,7 +40,88 @@
               <article class="article-padding">
                 <h1>Title </h1>
                 <h4>date </h4>
-                <p> Insert text here</p>
+                <p>Everyone loves movies. Great actors, locations, music and effects all captured at 24 frames a second. That's fancy movie-speak for how the camera works, capturing an image every 1/24th of a second. In the old days, we called a movie a "picture," and that's closer to the reality, but it's really a whole lot of pictures, one after another.</p>
+
+                <p>So with that knowledge, imagine you're a movie professional. The director says we just shot 10 seconds of a scene, and now it's up to you to calculate exactly how many pictures we have, okay? 24 * 10 = 240 pictures, or frames in fancy movie-speak. Good. Next day on the job, George Lucas walks in and tells you and the effects department to fix the color of the wall in the scene with R2D2, which they just shot. If it's the same 10-second shot, that's easy, right? 240 frames. And that's 240 little pictures we need to fix. Can you imagine photoshopping 240 pictures? Ugh, making movies is hard work.</p>
+
+                <p>Thank heavens for computers. They love repeating themselves, probably as much as they love organizing things! Our friend Ruby is really good at both.</p>
+
+<p>We already know Ruby deals with individual things like strings and numbers, and it puts those things together in collections.</p>
+
+<p>action_movie_title = "The Dirty Dozen"</p>
+
+<p>actors_on_payroll = 12</p>
+
+<p>actors_names = ["Lee", "Charlie", "Ernest", "Jim", "John", "George", "Trini", "Ralph", "Robert", "Telly", "Donald"]</p>
+
+<p>And we know we can perform actions on those things, just like we can perform actions on those collections.</p>
+
+<p>movie_poster_title = "See it now: " + action_movie_title =&gt; "See it now: The Dirty Dozen"</p>
+
+<p>actors_names = actors_names.push("Clint")</p>
+
+<p>Naturally, we're going to run into a situation where we want to do both. Enter Enumerables. This fancy module allows us to perform an operation on the collection. But not on the collection itself, rather on each of the elements in the collection.</p>
+
+<p>actors_names.each { | name | p name + " is great!"}</p>
+
+<p>=&gt; "Lee is great!"</p>
+
+<p>=&gt; "Charlie is great!" ...</p>
+
+<p>Ok, so what is happening there? The key to understanding the Enumerable module is understanding what #each does. That #each method goes through the collection and allows us to perform the operation one-by-one on each of the elements inside. From our example above, it's not the #each method that prints the names or concats the two strings together. It just allows us to iterate. That's fancy computer speak for step through each item.</p>
+
+<p>Being true to the Ruby way, we can perform operations for the moment or for good. We haven't actually changed our array using .each above, but we could do that with .map and store those changes in a new variable.</p>
+
+<p>movie_reviewer_quotes = actors_names.map { | name | name + " is great!" }</p>
+
+<p>Rewind 24 frames, err one second, and think about how I described the way that #each works. It doesn't actually perform the operation on the element. It just lets us access the element and call a method that belongs to that element, or class type. So if that element in our collection is a string, we can perform .capitalize. If it's an integer, then we call .round. But #each can't tell the difference and it's not picky. That means we can create new classes that include the #each method, and then have access to those great Enumerable functions. It also means we can code ourselves into a pickle.</p>
+
+<p>movie_reviews = ["Great!", 10, "Super exciting", 9.5, "Gritty"]</p>
+
+<p>movie_reviews.each { | x | x + 1 } ==&gt; throws an error!</p>
+
+<p>This doesn't work because #each is calling an integer method on everything in the collection. That includes integers, where it will work. And strings, where it won't.</p>
+
+<p>Enumerables Part 2: The Awakening.</p>
+
+<p>In this episode, we realize that our hero #each is not working alone. His efforts are just the building blocks of a bigger, broader campaign to wrangle our code as we see fit. It's great to know that we can transform our collection by accessing all the elements in the collection, but&nbsp; ... then what? Accessing each element is no longer enough. We want more!</p>
+
+<p>With other Enumerable methods, we can further sort and manage the elements in these collections.</p>
+
+<p>-.any? to see if any element passes a true/false test</p>
+
+<p>-.count to count the number of elements or, with a code block, count the number that passes a test</p>
+
+<p>-etc.</p>
+
+<p>To fix the problem above, we could use another cool Enumerable method like .partition. This method will spit out two arrays, one with elements that pass our test, and others that don't. This is a good way to separate the strings from integers in that array above.</p>
+
+<p>sorted_movie_reviews = movie_reviews.partition { | x | x.is_a?(Integer) }</p>
+
+<p>=&gt; [ [10, 9.5], ["Great!", "Super exciting", "Gritty"] ]</p>
+
+<p>sorted_movie_reviews[0].each { | review | p review.to_s + " stars" }</p>
+
+<p>=&gt; "10 stars"</p>
+
+<p>=&gt; "9.5 stars"</p>
+
+<p>sorted_movie_reviews[1].each { | review | review.upcase! }</p>
+
+<p>=&gt;[ "GREAT!", "SUPER EXCITING", "GRITTY" ]</p>
+
+<p>That's cool! But that array [0] business is a little fussy. Anything else we can do? Sure! Let's set up those two new variable names from the start.</p>
+
+<p>star_reviews, verbal_reviews = movie_reviews.partition { | review | review.is_a?(Integer) }</p>
+
+<p>=&gt; star_reviews = [ 10, 9.5 ]</p>
+
+<p>=&gt; verbal_reviews = [&nbsp;"Great!", "Super exciting", "Gritty" ]</p>
+
+<p>If you've never seen two variable names go on the left side of the equals sign, then join the club! Ruby continues to amaze me with its ability to parse multiple parameters, multiple arguments and give me what I want. Amazing.</p>
+
+<p>Whew, all this action movie talk and I'm spent. While we haven't been filming a movie that tells an epic tale of love and tragedy for the ages, Ruby does a great job executing some epic sorting operations.</p>
+
             </article>
           </div>
           <aside>
