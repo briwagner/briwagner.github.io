@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html ng-app="blogLinks">
+  <head>
+      <meta charset="utf-8" />
+      <title>Brian's Site - Card Class</title>
+      <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+      <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+      <script src="../scripts/blog-links.js"></script>
+
+      <link rel="icon" type"image/png" href="../imgs/bri_favicon.ico"
+    </head>
+
+  <body>
+    <div class="container">
+      <div id="header" class="brd-bottom">
+        <div class="row">
+          <div class="head-logo">
+             <a href="../index.html">
+              <img src="../imgs/b_logo2.jpg" alt="logo" class="logo-img">
+             </a>
+            <h2 class="disp-inline">Welcome to Brian's Site</h2>
+          </div>
+          <div class="head-links text-right">
+            <nav>
+              <a href="index.html" class="navlink">Blog</a>
+              <a href="../projects.html" class="navlink">Projects</a>
+              <a href="../videos.html" class="navlink">Videos</a>
+              <a href="../places.html" class="navlink">Places</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <div class="row bkg-white brd-bottom">
+          <div class="row-70 fl-left">
+            <h1 class="article-padding">Blog Entries</h1>
+              <article class="article-padding">
+                <h1>Take Playing Cards to Class </h1>
+                <h4>November 4, 2015</h4>
+                <p><img src="../imgs/hazel_bday.jpg" alt="Hazel is a black dog" class="sidebar-pic"/>Classes are a great way in Ruby and other languages to emulate the real world. Why? Because things in the real world are messy, they don't fit into neat little packages of uniform size. Take my dog, Hazel. I cannot begin to describe her as an array.</p>
+
+                <div class="code-well">
+                  <p>Hazel = [12, 16, 18.5, "black", "arf"]<br />
+                  =&gt; false</p>
+                </div>
+
+                <p>That code fails to convey the complexity that is my little dog. Even simple things, like a pack of playing cards defy such simple structures. Sure, playing cards have ranks from 2 to Ace. But then there are four different suits. And two different colors. And heaven help us from having to account for the Jacks with one eye showing and the ones with two eyes showing!</p>
+
+                <h3>Enter Class</h3>
+
+                <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Jack_of_diamonds_fr.svg/500px-Jack_of_diamonds_fr.svg.png" alt="Jack playing card" class="sidebar-pic"/>Classes are like containers for us to build that complexity of design and function. Not only can we define properties, we can define a variety of actions they can take, in the form of methods. So let's get started with that lowly deck of playing cards.</p>
+
+                <p>When you first open a new pack of cards, you're hit with the aroma of polymer on paper and the sight of all the royal entourage in perfect order. How quaint.</p>
+
+                <div class="code-well">
+                  <p>class PlayingCards</p>
+
+                  <p>&nbsp; def initialize<br />
+                  &nbsp;&nbsp;&nbsp; @cards = %w[A 2 3 4 5 6 7 8 9 10 J Q K]<br />
+                  &nbsp; end</p>
+
+                  <p>end</p>
+                </div>
+
+                <p>Every deck has four suits. And we know that each suit has cards ranking from A to K (or 2 to A, if that's your preference. It is not mine.). So we don't need to assign the ranks four times, right? We can do it once and then assign that to the suits later.</p>
+
+                <div class="code-well">
+                  <p>def hearts<br />
+                  &nbsp;@cards<br />
+                  end</p>
+                </div>
+
+                <p>Hmm, that's going to be a problem when we have to define four different suits with the same set of cards. How's this?</p>
+
+                <div class="code-well">
+                  <p>&nbsp; def hearts<br />
+                  &nbsp;&nbsp;&nbsp; @cards.collect {|x| x.to_s + "-Hr"}<br />
+                  &nbsp; end</p>
+                </div>
+
+                <p>Ok, so now those hearts cards have a rank, AND we've marked them with a little heart designation, just like the colored pictures are painted on the real playing cards. So now we've created something that looks like the virgin deck of cards that comes out of the box. Everything in perfect order. Let's mess things up.</p>
+
+                <div class="code-well">
+                  <p>&nbsp; def make_deck<br />
+                  &nbsp;&nbsp;&nbsp; heart_stack = hearts<br />
+                  &nbsp;&nbsp;&nbsp; spade_stack = spades<br />
+                  &nbsp;&nbsp;&nbsp; diamond_stack = diamonds<br />
+                  &nbsp;&nbsp;&nbsp; club_stack = clubs<br />
+                  &nbsp;&nbsp;&nbsp; full_deck = heart_stack + spade_stack + diamond_stack + club_stack<br />
+                  &nbsp;&nbsp;&nbsp; full_deck.shuffle<br />
+                  &nbsp; end</p>
+                </div>
+
+                <p>Now we're getting into the action part with our methods. This method should be simple to understand. We want to combine all those stacks of suit cards into one big deck (full_deck) and shuffle them together. If you've ever tried to shuffle cards like the cool Vegas dealers, well this is much less frustrating.</p>
+
+                <p>Cool, now we have a shuffled deck of cards, and we can start playing solitaire, right? Boooring. I'm sitting here writing this by myself, I want to play cards WITH somebody. But with who? And with how many somebodies? Well we can accomodate the how many by adapating our initialize method above, to accept an argument.</p>
+
+                <div class="code-well">
+                  <p>&nbsp; def initialize(players)<br />
+                  &nbsp;&nbsp;&nbsp; @players = players<br />
+                  &nbsp;&nbsp;&nbsp; @cards = %w[A 2 3 4 5 6 7 8 9 10 J Q K]<br />
+                  &nbsp; end</p>
+                </div>
+
+                <p>Now we call the method and declare how many somebodies are playing. And this number we want to be an instance variable that is available throughout the class, because it's a useful thing to know. Each game we play may have a different number of players, so it's really important to set that at the start and have access to it.</p>
+
+                <p>We have our cards, we have our players. Now we need to put them together and to do that with DEAL. But how? There are as many card games as there are cards, and each game has its own way to deal a hand. To keep it simple, let's play Blackjack, which starts with two cards to each player. And if we think about, dealing is one method. Dealing a blackjack hand is kind of unique. So we'll create two methods that work together.</p>
+
+                <div class="code-well">
+                  <p>&nbsp; def new_game<br />
+                  &nbsp;&nbsp;&nbsp; @new_deck = make_deck<br />
+                  &nbsp;&nbsp;&nbsp; @players.times do<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; deal_blackjack<br />
+                  &nbsp;&nbsp;&nbsp; end<br />
+                  &nbsp; end</p>
+
+                  <p>&nbsp; def deal_blackjack<br />
+                  &nbsp;&nbsp;&nbsp; hand = []<br />
+                  &nbsp;&nbsp;&nbsp; 2.times do<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hand &lt;&lt; @new_deck.shift<br />
+                  &nbsp;&nbsp;&nbsp; end<br />
+                  &nbsp;&nbsp;&nbsp; p hand<br />
+                  &nbsp; end</p>
+                </div>
+
+                <p>We can see how things are getting intertwined here, and that's ok because that's how the real world tends to look, right? So we have that @players variable coming down here, which sets how many hands we need to deal. And we have a @new_deck variable which we'll have to stick in the Class above, so it's available throughout the game instance. That deal_blackjack method is hard-coded to deal two cards, because that's the game. A poker method might have 5.times do ... instead. And in that case, we could alter our initialize method up top, to add a new parameter where we could define which card game we're playing ...</p>
+
+                <p>Maybe I'll do that next time. I'm sitting on a pair of Kings, and I think I can beat the dealer!</p>
+
+                <p><a href="playing_card_class.rb">Source code</a></p>
+
+            </article>
+          </div>
+          <aside>
+            <div class="row-30 fl-right bkg-floral" ng-controller="blogPostCtrl">
+              <h3 class="article-padding">More Blogs</h3>
+              <ul class="no-list article-padding" ng-repeat="blogPost in blogPosts">
+                <li><a href="{{ blogPost.href }}">{{ blogPost.title }}</a></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </main>
+
+     <script>
+        angular.module('blogLinks', []).controller('blogPostCtrl', BlogPostCtrl);
+
+        function BlogPostCtrl($scope) {
+          $scope.blogPosts = blogPosts;
+        }
+
+      </script>
+
+      <aside>
+        <div class="row">
+          <h2 class="article-padding">Places | Pics</h2>
+          <div class="ht-md pic-cover brd-top brd-bottom">
+            <div class="label-box fl-right">
+              <a href="#" class="link-bold">
+                <p class="label-text">Pinnacles National Park</p>
+                <p class="label-text">Central California</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    <div class="spacer">
+    </div>
+
+      <footer>
+        <div class="footer">
+          <!-- social media links -->
+          <div class="center">
+            <ul class="social-links center">
+              <li><a href="https://www.linkedin.com/in/brianwagnerfilm"><img src="../imgs/linkedin.png" alt="linkedin link"></a></li>
+              <li><a href="https://github.com/hazelmaeby"><img src="../imgs/github.jpg" alt="github link"></a></li>
+              <li><a href="https://twitter.com/hazelmaeby"><img src="../imgs/twitter.jpg" alt="twitter link"></a></li>
+            </ul>
+          </div>
+          <p class="center">Made by Brian Wagner | &#169; 2015</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
