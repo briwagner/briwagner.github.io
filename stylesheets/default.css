@@ -28,7 +28,7 @@ nav {
 }
 
 .navlink {
-	margin-right: 2%;
+	margin-right: 0.3em;
 	text-decoration: none;
 	font-size: 1.8em;
 	border-right: 0.15em solid #5a0f8c;
@@ -56,6 +56,11 @@ nav {
 	margin-right:0.5%;
 }
 
+.rel-right {
+	position:relative;
+	left:68%;
+}
+
 .row {
 	width:100%;
 	overflow:hidden;
@@ -64,6 +69,7 @@ nav {
 
 .half-row {
 	width:49%;
+	display:inline-block;
 	overflow:hidden;
 }
 
@@ -79,7 +85,7 @@ nav {
 
 .spacer {
 	width:100%;
-	height:1.6em;
+	height:0.8em;
 	clear:both;
 }
 
@@ -171,12 +177,38 @@ a {
 	padding:2em 0 2.8em;
 }
 
+.triplet-no-pad {
+	width:32.3%;
+	display:inline-block;
+	margin-left: 0.3em;
+	padding: 0.2em 0;
+}
+
+.triplet-70 {
+	width: 66%;
+	display:inline-block;
+}
+
+.triplet:first-child {
+	margin-left:0.3em;
+}
+
 .triplet h2 {
 	margin: 0.5em 0;
 }
 
 .triplet li {
 	margin-bottom:0.5em;
+}
+
+.triplet-pic {
+	max-width:100%;
+	height:auto;
+}
+
+.center-80 {
+	width: 80%;
+	margin:auto;
 }
 
 .bkg-white {
@@ -236,6 +268,14 @@ ul {
 	background-repeat: no-repeat;
 }
 
+#dc-cover {
+	background: url('../imgs/dc_pano.jpg');
+	background-position: center center;
+	background-size: cover;
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+}
+
 .angle-mask {
 	width:100%;
 }
@@ -283,6 +323,21 @@ ul {
 	height:40px;
 	width:auto;
 	margin: 5px;
+}
+
+.inline {
+	display:inline-block;
+}
+
+.circle-pic {
+	width: 10%;
+	height:auto;
+	border-radius: 50%;
+	margin: 0.15em 0.5em 0.35em;
+}
+
+.align-middle {
+	vertical-align: middle
 }
 
 /* media queries be here !! */
