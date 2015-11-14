@@ -1,9 +1,13 @@
 <!DOCTYPE HTML>
-<html>
+<html ng-app="blogLinks">
   <head>
       <meta charset="utf-8" />
       <title>Brian's Site</title>
       <link rel="stylesheet" type="text/css" href="stylesheets/default.css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+      <script src="scripts/blog-links.js"></script>
+
       <link rel="icon" type"image/png" href="imgs/bri_favicon.ico"
     </head>
 
@@ -15,12 +19,12 @@
             <a href="index.html">
               <img src="imgs/b_logo2.jpg" alt="logo" class="logo-img">
             </a>
-            <h2 class="disp-inline">Welcome to Brian's Site</h2>
+            <h2 class="disp-inline"><a href="index.html" class="no-link">Welcome to Brian's Site</a></h2>
           </div>
           <div class="head-links text-right">
             <nav>
               <a href="blog/index.html" class="navlink">Blog</a>
-              <a href="projects.html" class="navlink">Projects</a>
+              <a href="projects/index.html" class="navlink">Projects</a>
               <a href="videos.html" class="navlink">Videos</a>
               <a href="about.html" class="navlink">About</a>
             </nav>
@@ -34,22 +38,17 @@
       <main>
         <div id="container-main" class="brd-bottom">
           <div class="row">
-            <div class="fl-left half-row ht-lg">
+            <div class="fl-left half-row ht-lg" ng-controller="blogPostCtrl">
               <div class="main-article-border ht-lg-pad">
-                  <h1 class="article-header article-padding">Featured Blog Post</h1>
-                  <!-- first blog tease -->
-                  <h2 class="article-padding">What's on Your Keychain?</h2>
-                  <p class="article-padding">Posted: October 24, 2015</p>
-                  <p class="article-padding">In programming, we love to collect stuff. Sometimes on a keyring, where everthing is the same. And sometimes it's in a wallet where everything is a little different. Join me on a long-winded metaphor about arrays and hashes in Ruby.</p>
-                  <p class="article-padding"><a href="blog/array-hash.html" class="link-bold">Read more</a></p>
-
-                  <!-- second blog tease -->
-                  <h2 class="article-padding">The Benefits of Control</h2>
-                  <p class="article-padding">Posted: October 4, 2015</p>
-                  <p class="article-padding">Version control is like living for today and not giving up the past. Version control is when each of us gets our own way, and the group stays happy. Version control is being in two places at once.</p>
-                  <p class="article-padding"><a href="blog/git.html" class="link-bold">Read more</a></p>
+                <h1 class="article-header article-padding">Featured Blog Post</h1>
+                  <div ng-repeat="blogPost in blogPosts | limitTo:2">
+                    <h2 class="article-padding">{{ blogPost.title }}</h2>
+                    <p class="article-padding">Posted: {{ blogPost.date }}</p>
+                    <p class="article-padding">{{ blogPost.summary | limitTo:230 }} ...</p>
+                    <p class="article-padding"><a href="blog/{{ blogPost.href }}">More</a></p>
                 </div>
               </div>
+            </div>
               <div class="fl-right half-row main-article-border ht-lg-pad half-row-pic-cover">
                 <div class="pic-container-main">
                 </div>
@@ -64,19 +63,18 @@
       </div>
 
       <div class="row">
-        <div class="triplet center brd-full-primary round-box antique">
+        <div class="triplet center brd-full-primary round-box antique" ng-controller="blogPostCtrl">
           <h2>Blog</h2>
-          <ul class="no-list">
-            <li><a href="#" class="link-bold">First Blog Link</a></li>
-            <li><a href="#" class="link-bold">Second Blog Link</a></li>
+          <ul class="no-list" ng-repeat="blogPost in blogPosts | limitTo:2">
+            <li><a href="blog/{{ blogPost.href }}" class="link-bold">{{ blogPost.title }}</a></li>
           </ul>
         </div>
 
         <div class="triplet center brd-full-primary round-box antique">
           <h2>Projects</h2>
           <ul class="no-list">
-              <li><a href="#" class="link-bold">First Project</a>
-              <li><a href="#" class="link-bold">Second Project</a></li>
+              <li><a href="projects/raindrop/index.html" class="link-bold">Raindrop JS Game</a>
+              <li><a href="http://windowpanemedia.com/game" class="link-bold">Fast Football JS Game</a></li>
           </ul>
         </div>
 
@@ -88,6 +86,15 @@
           </ul>
           </div>
       </div>
+
+      <script>
+        angular.module('blogLinks', []).controller('blogPostCtrl', BlogPostCtrl);
+
+        function BlogPostCtrl($scope) {
+          $scope.blogPosts = blogPosts;
+        }
+
+      </script>
 
     <div class="spacer">
       </div>
