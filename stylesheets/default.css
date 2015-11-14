@@ -89,6 +89,10 @@ nav {
 	clear:both;
 }
 
+.white-text {
+	color:white;
+}
+
 .antique {
 	background-color: antiquewhite;
 }
@@ -130,6 +134,11 @@ a {
 
 .text-right {
 	text-align: right;
+}
+
+.no-link {
+  text-decoration: none;
+  color:inherit;
 }
 
 /* SPECIFIC ITEMS */
