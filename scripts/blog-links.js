@@ -1,5 +1,11 @@
 var blogPosts = [
   {
+    href: "js-ruby.html",
+    title: "Looping in Javascript and Ruby",
+    summary: "Looping is central to what computers do. This is a good thing to know, so I'll say it again. Looping is central to what computers do. Different computer languages do this in different ways, but all with the same goal: to loop. Now, Ruby has its own clever ways to do this, and the most simple is to just do the same thing over and over again.",
+    date: "November 16, 2015",
+  },
+  {
     href: "playing-card-class.html",
     title: "Take Playing Cards to Class",
     summary: "Classes are a great way in Ruby and other languages to emulate the real world. Why? Because things in the real world are messy, they don't fit into neat little packages of uniform size. Take my dog, Hazel. I cannot begin to describe her as an array. Any code code fails to convey the complexity that is my little dog. Even simple things, like a pack of playing cards defy such simple structures. Sure, playing cards have ranks from 2 to Ace. But then there are four different suits. And two different colors. And heaven help us from having to account for the Jacks with one eye showing and the ones with two eyes showing!",
