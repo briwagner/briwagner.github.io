@@ -40,100 +40,10 @@
               <article class="article-padding">
                 <h1>Title </h1>
                 <h4>date </h4>
-                <p>Looping is central to what computers do. This is a good thing to know, so I'll say it again. Looping is central to what computers do.</p>
-
-                <p>Different computer languages do this in different ways, but all with the same goal: to loop. Now, Ruby has its own clever ways to do this, and the most simple is to just do the same thing over and over again.</p>
-
-                <p>truth = "Rainbows are beautiful! "</p>
-
-                <p>truth * 4</p>
-
-                <p>Of course, repetition is nice, but repetition with variation is even nicer. And when dealing with more complicated objects in a programming environment, we're going to need to account for the inherent variations. So imagine we have one object, which contains a number of elements. Now all the elements are the <em>same</em> because they belong inside the object. But they're also <em>unique</em> to each other, because they mean something different or have different values.</p>
-
-                <p>colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]</p>
-
-                <p>for color in colors</p>
-
-                <p>p "My favorite color is #{color}"</p>
-
-                <p>end</p>
-
-                <p>"My favorite color is red"<br />
-                "My favorite color is orange"<br />
-                "My favorite color is yellow"<br />
-                "My favorite color is green"<br />
-                "My favorite color is blue"<br />
-                "My favorite color is indigo"<br />
-                "My favorite color is violet"</p>
-
-                <p>Now we're looping inside the colors object. And a simple change allows us to account for those variations, by including or excluding certain elements for example.</p>
-
-                <p>for color in colors</p>
-
-                <p>p "My favorite color is #{color}" if color == "blue"</p>
-
-                <p>end</p>
-
-                <p>"My favorite color is blue"</p>
-
-                <p>for color in colors</p>
-
-                <p>p "My favorite color is #{color}" if color != "red"</p>
-
-                <p>end</p>
-
-                <p>"My favorite color is orange"<br />
-                "My favorite color is yellow"<br />
-                "My favorite color is green"<br />
-                "My favorite color is blue"<br />
-                "My favorite color is indigo"<br />
-                "My favorite color is violet"</p>
-
-                <p>Ruby has some even more clever ways to do that, namely with the Enumerable methods.</p>
-
-                <p>colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]</p>
-
-                <p>colors.each { |color| p "My favorite color is #{color}" }</p>
-
-                <p>Now, Javascript likes to do the same thing, but in its own unique way. And notice I said "way" not "ways." In comparison to Ruby, JS may seem like a one-trick pony with the way it handles looping.</p>
-
-                <p>var colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];</p>
-
-                <p>for (var color = 0; color &lt; colors.length; color ++){</p>
-
-                <p>console.log("My favorite color is " + colors[color)];</p>
-
-                <p>}</p>
-
-                <p>It's that first line that controls the looping function, but oh what a line it is. It may seem awfully fussy at first, but it provides a great deal of flexibility in one neat little package. The first statement is used to create a new variable to serve as an index, which tells the loop where to start. In this case, we start at 0, the first element in the array. But we could just as easily start in the middle, or at the end, no?</p>
-
-                <p>The second statement is the actual loop. Do this block until some event, or as long as a condition is true. In this case, we just want to run through all the elements in the array and stop. But I could stop when I get all the elements I need.</p>
-
-                <p>var color_palette = [];</p>
-
-                <p>for (var color = 0; color_palette.length &lt; 2; color ++){<br />
-                &nbsp; color_palette.push(colors[color]);<br />
-                }</p>
-
-                <p>console.log(color_palette)</p>
-
-                <p>=&gt; ["red", "orange"]</p>
-
-                <p>And the third part of our JS looping statement may be the most important. It tells the computer what to do after each run through the code block. If we do nothing here or do something insufficient, then the loop may continue forever. Remember, computers love to loop and they will keep looping even when our patience for it has run out. In our case, we just want to run up the index: 0, 1, 2, 3, 4 ... But we could just as easily skip-step, or count backward.</p>
-
-                <p>for (var color = 0; color &lt; colors.length; color += 2){ ...}</p>
-
-                <p>for (var color = colors.length - 1; color &gt;= 0; color --) {...}</p>
-
-                <p>Personally, I love this framework. It's a little tricky to remember at first, with three different elements and those pesky semi-colons. But once you internalize it, then you see the flexibility it provides and you can work on developing ways to master it.</p>
-
-                <p>&nbsp;</p>
-
-                <p>&nbsp;</p>
-
-                <p>&nbsp;</p>
-
-
+                <p><img src="#" class="sidebar-pic">Sample text.</p>
+                <div class="code-well">
+                  <p>Sample code</p>
+                </div>
             </article>
           </div>
           <aside>
