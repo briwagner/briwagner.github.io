@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html ng-app="cheatSheet">
+  <head>
+      <meta charset="utf-8" />
+      <title>Cheat Sheet</title>
+      <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+      <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+      <script src="../scripts/cheat-sheet.js"></script>
+
+      <link rel="icon" type"image/png" href="../imgs/bri_favicon.ico"
+    </head>
+
+  <body>
+    <div class="container">
+      <div id="header" class="brd-bottom">
+        <div class="row">
+          <div class="head-logo">
+             <a href="../index.html">
+              <img src="../imgs/b_logo2.jpg" alt="logo" class="logo-img">
+             </a>
+            <h2 class="disp-inline">Welcome to Brian's Site</h2>
+          </div>
+          <div class="head-links text-right">
+            <nav>
+              <a href="index.html" class="navlink">Blog</a>
+              <a href="../projects.html" class="navlink">Projects</a>
+              <a href="../videos.html" class="navlink">Videos</a>
+              <a href="../about.html" class="navlink">About</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+<!-- BLOG TEXT GOES HERE -->
+      <main>
+        <div class="row bkg-white brd-bottom">
+          <div class="row-70 fl-left" ng-controller="cheatSheetCtrl">
+            <h1 class="article-padding">Cheat Sheet for Ruby Syntax</h1>
+            <div class="article-padding" ng-repeat="cheat in cheatSheet">
+              <h3><a name="{{ cheat.name }}"> {{ cheat.title }}</a></h3>
+              <p> {{ cheat.content }}</p>
+              <p class="code-well">{{ cheat.example }}</p>
+            </div>
+            <div class="spacer"> </div>
+          </div>
+    <!-- aside is here -->
+          <aside>
+            <div class="row-30 fl-right bkg-floral" ng-controller="cheatSheetCtrl">
+              <h3 class="article-padding">Cheats</h3>
+              <ul class="no-list article-padding" ng-repeat="cheat in cheatSheet">
+                <li><a href="{{ cheat.href }}"> {{ cheat.title }}</a></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </main>
+
+     <script>
+        angular.module('cheatSheet', []).controller('cheatSheetCtrl', CheatSheetCtrl);
+
+        function CheatSheetCtrl($scope) {
+          $scope.cheatSheet = cheatSheet;
+        }
+
+      </script>
+
+      <aside>
+        <div class="row">
+          <h2 class="article-padding">Places | Pics</h2>
+          <div class="ht-md pic-cover brd-top brd-bottom">
+            <div class="label-box fl-right">
+              <a href="#" class="link-bold">
+                <p class="label-text">Pinnacles National Park</p>
+                <p class="label-text">Central California</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    <div class="spacer">
+    </div>
+
+      <footer>
+        <div class="footer">
+          <!-- social media links -->
+          <div class="center">
+            <ul class="social-links center">
+              <li><a href="https://www.linkedin.com/in/brianwagnerfilm"><img src="../imgs/linkedin.png" alt="linkedin link"></a></li>
+              <li><a href="https://github.com/hazelmaeby"><img src="../imgs/github.jpg" alt="github link"></a></li>
+              <li><a href="https://twitter.com/hazelmaeby"><img src="../imgs/twitter.jpg" alt="twitter link"></a></li>
+            </ul>
+          </div>
+          <p class="center">Made by Brian Wagner | &#169; 2015 | <a href="../contact.html">Contact</a></p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
