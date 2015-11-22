@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html ng-app="blogLinks">
+  <head>
+      <meta charset="utf-8" />
+      <title>Blog - Linear and Binary Search</title>
+      <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+      <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+      <script src="../scripts/blog-links.js"></script>
+
+      <link rel="icon" type"image/png" href="../imgs/bri_favicon.ico"
+    </head>
+
+  <body>
+    <div class="container">
+      <div id="header" class="brd-bottom">
+        <div class="row">
+          <div class="head-logo">
+             <a href="../index.html">
+              <img src="../imgs/b_logo2.jpg" alt="logo" class="logo-img">
+             </a>
+            <h2 class="disp-inline">Welcome to Brian's Site</h2>
+          </div>
+          <div class="head-links text-right">
+            <nav>
+              <a href="index.html" class="navlink">Blog</a>
+              <a href="../projects.html" class="navlink">Projects</a>
+              <a href="../videos.html" class="navlink">Videos</a>
+              <a href="../about.html" class="navlink">About</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+<!-- BLOG TEXT GOES HERE -->
+      <main>
+        <div class="row bkg-white brd-bottom">
+          <div class="row-70 fl-left">
+            <h1 class="article-padding">Blog Entries</h1>
+              <article class="article-padding">
+                <h1>Linear and Binary Search </h1>
+                <h4>November 21, 2015</h4>
+                <p class="article-padding"><em>Two roads diverged in a wood, and I -<br/>
+                  I took the one less traveled by,<br/>
+                  And that has made all the difference.</em></p>
+                <p class="article-padding">- Robert Frost</p>
+                <p><img src="../imgs/butcher-knife.jpg" class="sidebar-pic">Like paths in the woods, we have a choice to make when it comes time to search. Yes, Google or Bing. But also what <em>kind</em> of search we perform. Of course, I didn't know this choice existed until we were asked to select our own Ruby challenge at DBC this week, but that was the choice that has made all the difference for me.</p>
+
+                <p>The first kind of search we call <strong>linear search</strong>. As the traveler proceeds from start to finish, so our programmer hero moves through a collection from first element to last to perform his search. The goal is to test every element for some condition, and when it succeeds, we will kick out of the loop and save unnecessary computer cycles. In Ruby, this can be done with Enumerables. We call these simple methods on an array or hash to run through the entities and perform all kinds of actions. Super clever.</p>
+
+                <div class="code-well">
+                  <p>forest = ['path_one', 'path_two', 'path_three', 'path_four']</p>
+
+                  <p>forest.each { |path| print "Should I take #{path}?" }</p>
+                </div>
+
+                <p>Of course, Javascript has its own version of this function, looping through a collection from start to finish, thanks to the for (items in collection) syntax.</p>
+
+                <p>When our collections are small, linear search is certainly reasonable to find what we need to find. But think of all the trees in the forest. That's a lot of searching. There must be another way.</p>
+
+                <p>Enter <strong>binary search</strong>, a term previously unknown to me. What if we could chop our search parameters in half? That would save time. Even better, let's keep chopping those halves in half until we get a really small sample to work with. That would really save unnecessary computer cycles.</p>
+
+                <p>But how do we decide which half of our collection to keep for the search, and which half to discard? This method of binary search only works, of course, when a collection is sorted, from A to Z, or 1 to 100. Imagine searching the phone book for Luigi's Pizza. You're not going to start at page 1 and scan each page. Crack open to a page somewhere near the middle, and start moving forward or back depending on where you land.</p>
+
+                <p>With some trial and error, I came to this iteration, which suited me well.</p>
+
+                <div class="code-well">
+                  <p>def binary_search(array, name)<br />
+                  &nbsp; begin_search = 0<br />
+                  &nbsp; end_search = array.length<br />
+                  &nbsp; loop do<br />
+                  &nbsp;&nbsp;&nbsp; middle = (end_search + begin_search) / 2<br />
+                  &nbsp;&nbsp;&nbsp; if name == array[middle].first_name<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p "match found at #{middle}"<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return<br />
+                  &nbsp;&nbsp;&nbsp; elsif name &gt; array[middle].first_name<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; begin_search = middle + 1<br />
+                  &nbsp;&nbsp;&nbsp; else<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end_search = middle<br />
+                  &nbsp;&nbsp;&nbsp; end<br />
+                  &nbsp; end<br />
+                  end</p>
+                </div>
+
+                <p>The basic strategy is to test the target term against the item in the middle. Less than that? We focus on the first half. Greater than, the latter half. We do this by setting a start point and end point for the search, and calculate the middle. We winnow down the range by adjusting the start, end and middle points.</p>
+
+                <p>It's kind of amazing to see how few times the loop needs to run until you hit the mark. Search for a number between 1 and 50, and it's found within just a few runs through the loop. Imagine running a linear search for '20' and you know exactly how many times it'll run. 19 fails before success.</p>
+
+                <p>One nice thing about an implementation like this is that it has some universal application to a search based on numbers or letters.</p>
+
+            </article>
+          </div>
+          <aside>
+            <div class="row-30 fl-right bkg-floral" ng-controller="blogPostCtrl">
+              <h3 class="article-padding">More Blogs</h3>
+              <ul class="no-list article-padding" ng-repeat="blogPost in blogPosts">
+                <li><a href="{{ blogPost.href }}">{{ blogPost.title }}</a></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </main>
+
+     <script>
+        angular.module('blogLinks', []).controller('blogPostCtrl', BlogPostCtrl);
+
+        function BlogPostCtrl($scope) {
+          $scope.blogPosts = blogPosts;
+        }
+
+      </script>
+
+      <aside>
+        <div class="row">
+          <h2 class="article-padding">Places | Pics</h2>
+          <div class="ht-md pic-cover brd-top brd-bottom">
+            <div class="label-box fl-right">
+              <a href="#" class="link-bold">
+                <p class="label-text">Pinnacles National Park</p>
+                <p class="label-text">Central California</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    <div class="spacer">
+    </div>
+
+      <footer>
+        <div class="footer">
+          <!-- social media links -->
+          <div class="center">
+            <ul class="social-links center">
+              <li><a href="https://www.linkedin.com/in/brianwagnerfilm"><img src="../imgs/linkedin.png" alt="linkedin link"></a></li>
+              <li><a href="https://github.com/hazelmaeby"><img src="../imgs/github.jpg" alt="github link"></a></li>
+              <li><a href="https://twitter.com/hazelmaeby"><img src="../imgs/twitter.jpg" alt="twitter link"></a></li>
+            </ul>
+          </div>
+          <p class="center">Made by Brian Wagner | &#169; 2015 | <a href="../contact.html">Contact</a></p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
