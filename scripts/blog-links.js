@@ -1,5 +1,11 @@
 var blogPosts = [
   {
+    href: "linear-binary-search.html",
+    title: "Linear and Binary Search",
+    summary: "Like paths in the woods, we have a choice to make when it comes time to search. Yes, Google or Bing. But also what kind of search we perform. We're talking about linear search and binary search, so read on, if you choose.",
+    date: "November 21, 1975",
+  },
+  {
     href: "js-ruby.html",
     title: "Looping in Javascript and Ruby",
     summary: "Looping is central to what computers do. This is a good thing to know, so I'll say it again. Looping is central to what computers do. Different computer languages do this in different ways, but all with the same goal: to loop. Now, Ruby has its own clever ways to do this, and the most simple is to just do the same thing over and over again.",
