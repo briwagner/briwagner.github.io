@@ -3,7 +3,7 @@ var blogPosts = [
     href: "linear-binary-search.html",
     title: "Linear and Binary Search",
     summary: "Like paths in the woods, we have a choice to make when it comes time to search. Yes, Google or Bing. But also what kind of search we perform. We're talking about linear search and binary search, so read on, if you choose.",
-    date: "November 21, 1975",
+    date: "November 21, 2015",
   },
   {
     href: "js-ruby.html",
@@ -36,9 +36,9 @@ var blogPosts = [
     date: "October 19, 2015",
 	},
 	{
-		href: "git.html",
+		href: "git-blog.html",
 		title: "The Benefits of Control",
     summary: "Version control is like living for today and not giving up the past. Version control is when each of us gets our own way, and the group stays happy. Version control is being in two places at once.As if that wasn't crystal clear, let's add that version control is how developer teams all stay on top of the game, even when people are doing their own thing. It allows individuals to work on a project without slowing down or affecting the work of others. It allows bugs to be quickly identified and isolated. It allows people in different places to work at their speed and in disparate directions, while still pushing toward the same goal. It allows great minds to work at their best, without the technology getting in the way.",
     date: "October 4, 2015",
-	}
+	},
 ];
