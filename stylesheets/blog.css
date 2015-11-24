@@ -52,3 +52,8 @@ aside li {
   overflow: hidden;
   white-space: pre-wrap;
 }
+
+/* for video page*/
+.fit-video {
+  margin-left: 4em;
+;}
