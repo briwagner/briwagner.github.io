@@ -71,6 +71,7 @@ nav {
 	width:49%;
 	display:inline-block;
 	overflow:hidden;
+	margin-left:0.2em;
 }
 
 /* 	GENERAL CLASSES  */
@@ -308,17 +309,27 @@ ul {
 }
 
 .label-box {
-	height:90px;
+	height:4.5em;
 	width:320px;
 	background-color: #dea645;
 	border:none;
-	top: 11.5em;
 	position:relative;
 	box-shadow: -8px 8px 2px #333;
+	padding-top:0.3em;
+}
+
+.label-fit-landscape {
+	top: 13em;
+	left:76%;
+}
+
+.label-fit-main {
+	top: 22em;
+	left:55%;
 }
 
 .label-text {
-	padding:0.7em 2em 0;
+	padding:0.3em 2em 0;
 	font-size: 115%;
 	margin:0;
 }
