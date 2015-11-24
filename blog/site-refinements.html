@@ -2,7 +2,7 @@
 <html ng-app="blogLinks">
   <head>
       <meta charset="utf-8" />
-      <title>Brian's Site</title>
+      <title>Blog: Refine the Site</title>
       <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
       <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
 
@@ -38,12 +38,17 @@
           <div class="row-70 fl-left">
             <h1 class="article-padding">Blog Entries</h1>
               <article class="article-padding">
-                <h1>Title </h1>
-                <h4>date </h4>
-                <p><img src="#" class="sidebar-pic">Sample text.</p>
+                <h1>Refine the Site </h1>
+                <h4>November 24, 2015</h4>
+                <p><a data-flickr-embed="true"  href="https://www.flickr.com/photos/nycmarines/5157412430/in/photolist-8RK62Y-kjEC2Z-tEsAP-9VPR5A-5emyzR-amZSvd-9JNc9z-Mf5K-8MKZnr-81JzpW-8m8iZK-4z9TEf-8bNRk3-c2ZUhU-aBHk7C-4E36P-9NFVNX-f3cimk-a3XDrR-8369Jd-9NBBMn-9NGKrb-7FyXDZ-2hYsBf-fMbrRY-9NEdXe-9NH9LR-pCLnPU-8367w1-4VsDX5-9MnRYX-9EGM1a-gtSRQA-amqjaf-paqzvY-4z9Kkf-5wKg8h-8iabyQ-9LPBnH-e1ajwj-9NEwpU-b8CWAT-9NH11D-81FtLe-9NKJWL-81JCL1-9M2DUT-9NDZCz-4z9NVY-4z5AY2" title="Oldest racer, Marine veteran finishes ING New York City Marathon, Nov. 7"><img src="https://farm2.staticflickr.com/1153/5157412430_8ae7001e6d_b.jpg" width="1024" height="683" alt="Oldest racer, Marine veteran finishes ING New York City Marathon, Nov. 7" class="sidebar-pic"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>I feel like we crossed the finish line, at least for phase 0 now with the completion of our personal sites. No doubt, there is more that could be accomplished, but it's good to see where I brought it as of today.</p>
+                <p>At the start, I certainly had notions for the site that didn't pan out. I imagined more biographical stuff, but what's the point of that? That's what myspace is for. Still I needed to complete the video section, and I added a couple neat vids, that provide a bit of my history for anyone interested.</p>
+                <p>More than anything, this final round of site edits needed to focus on refining the CSS and getting all the links to work. I finally tweaked the front page so the two main boxes will behave in a more orderly fashion. It should look the same as before, but work differently under the hood. I also took the time to isolate some of the CSS in a way is more flexible and easy to use going forward.</p>
+                <p>My one big challenge for myself with this was to figure out how to integrate some angular.js elements. And I got a handle on the basics of that framework. The two blog entries on the front page are all spit out from angular. And the blog index page is all angular as well. The blog sidebar too. It's a neat framework if you're looking for some auto-generated content abilities. I certainly didn't want to maintain all the menu links for the blog posts as they grew in number, so I went looking for a better way.</p>
+                <p>Basically, angular has a repeat function, where you design the layout once in the html. Add the appropriate angular commands and link to a js file with all the content in it, in the form of an object. Then it will spit out all the various elements from that js object, repeating the basic structure you created initially. So the html is this:</p>
                 <div class="code-well">
-                  <p>Sample code</p>
+                  <p> { { blog.title } } ... { { blog.date } } ... { { blog.href } } ... { { blog.summary } } </p>
                 </div>
+                <p>I can't write all the formatting, because the page will interpret it! So look at the source for sure. Anyway, I can put that in a few spots on the site, in different formats even. And update the js file once, with updates. Angular will read the full js object and repeat magic happens. It's kind of the poor man's CMS system. If the js file is like my database and the angular works as a controller for the html. </p>
             </article>
           </div>
           <aside>
