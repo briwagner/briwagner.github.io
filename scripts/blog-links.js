@@ -1,5 +1,11 @@
 var blogPosts = [
   {
+    href: "site-refinements.html",
+    title: "Refining the Site",
+    summary:"I feel like we crossed the finish line, at least for phase 0 now with the completion of our personal sites. No doubt, there is more that could be accomplished, but it's good to see where I brought it as of today. More than anything, this final round of site edits needed to focus on refining the CSS and getting all the links to work.",
+    date: "November 24, 2015",
+  },
+  {
     href: "linear-binary-search.html",
     title: "Linear and Binary Search",
     summary: "Like paths in the woods, we have a choice to make when it comes time to search. Yes, Google or Bing. But also what kind of search we perform. We're talking about linear search and binary search, so read on, if you choose.",
