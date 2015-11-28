@@ -389,6 +389,10 @@ ul {
 		max-width: 2.3em;
 	}
 
+	.center-80 {
+		width: 90%;
+	}
+
 }
 
 @media (max-width: 768px) {
@@ -457,6 +461,24 @@ ul {
 	.label-fit-main {
 		top: 79%;
 		left: 72%;
+	}
+
+	.center-80 {
+		width:95%;
+	}
+
+	.triplet-70 {
+		width:95%;
+	}
+
+	.triplet-pic {
+		visibility: visible;
+	}
+
+	.triplet-no-pad {
+		display:block;
+		margin: 0 auto;
+		width: 55%;
 	}
 
  }
