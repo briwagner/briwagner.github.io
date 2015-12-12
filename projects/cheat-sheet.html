@@ -9,6 +9,7 @@
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
       <script src="../scripts/cheat-sheet.js"></script>
 
+      <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
       <link rel="icon" type"image/png" href="../imgs/bri_favicon.ico">
     </head>
 
@@ -44,11 +45,14 @@
             </div>
             <div class="spacer"> </div>
           </div>
+
+
     <!-- aside is here -->
           <aside>
             <div class="row-30 fl-right bkg-floral" ng-controller="cheatSheetCtrl">
               <h3 class="article-padding">Cheats</h3>
-              <ul class="no-list article-padding" ng-repeat="cheat in cheatSheet">
+              <input class="cheat-search" placeholder="Search" ng-model="searchKey" />
+              <ul class="no-list article-padding" ng-repeat="cheat in cheatSheet | filter:searchKey">
                 <li><a href="{{ cheat.href }}"> {{ cheat.title }}</a></li>
               </ul>
             </div>
