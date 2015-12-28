@@ -1,5 +1,11 @@
 var blogPosts = [
   {
+    href: "campus-week1.html",
+    title: "On Campus, Week 1",
+    summary: "After much build-up, we made it to Chicago. The material in the first week focuses on what I call algorithms. Many of the tasks require stringing together phrases that we’ve learned into mini programs that can convert a string, test whether a word is a palindrome, or other simple tasks.",
+    date: "December 14, 2015",
+  },
+  {
     href: "site-refinements.html",
     title: "Refining the Site",
     summary:"I feel like we crossed the finish line, at least for phase 0 now with the completion of our personal sites. No doubt, there is more that could be accomplished, but it's good to see where I brought it as of today. More than anything, this final round of site edits needed to focus on refining the CSS and getting all the links to work.",
