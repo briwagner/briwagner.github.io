@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html ng-app="blogLinks">
+  <head>
+      <meta charset="utf-8" />
+      <title>Brian's Site - On Campus, Week 1</title>
+      <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+      <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+      <script src="../scripts/blog-links.js"></script>
+
+      <link rel="icon" type"image/png" href="../imgs/bri_favicon.ico">
+    </head>
+
+  <body>
+    <div class="container">
+      <div id="header" class="brd-bottom">
+        <div class="row">
+          <div class="head-logo">
+             <a href="../index.html">
+              <img src="../imgs/b_logo2.jpg" alt="logo" class="logo-img">
+             </a>
+            <h2 class="disp-inline"><a href="../index.html" class="no-link">Welcome to Brian's Site</a></h2>
+          </div>
+          <div class="head-links text-right">
+            <nav>
+              <a href="index.html" class="navlink">Blog</a>
+              <a href="../projects/index.html" class="navlink">Projects</a>
+              <a href="../videos.html" class="navlink">Videos</a>
+              <a href="../about.html" class="navlink">About</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+<!-- BLOG TEXT GOES HERE -->
+      <main>
+        <div class="row bkg-white brd-bottom">
+          <div class="row-70 fl-left">
+            <h1 class="article-padding">Blog Entries</h1>
+              <article class="article-padding">
+                <h1>On Campus</h1>
+                <h4>December, 14, 2015</h4>
+                <p><img src="../imgs/cloudcity.jpg" alt="cloud city chicago" class="sidebar-pic">The first day of school always bring some excitement, a bit of anxiety and a lot of unknown. Dev Bootcamp started off no differently.</p>
+                <p>After eight weeks at home, I was eager to see these people in person, and had little idea of how many there would be on campus in Chicago. A number of faces that I had paired with remotely were missing, which adds an unnerving bit of mystery. But twenty others had made it this far, along with me.</p>
+                <p>The material in the first week focuses on what I call algorithms. Many of the tasks require stringing together phrases that we’ve learned into mini programs that can convert a string, test whether a word is a palindrome, or other simple tasks. In the end, many of these come off as little mind puzzles that require you to think about mapping the shortest route to the solution, and then implementing it with code. Some provide an opportunity to explore recursion or other higher-level techniques. Looking around the room after these challenges, it’s easy to draw the line between those with more coding experience than others.</p>
+                <p>Naturally, some of these exercises are repetitive from previous work we did in DBC or on other code-ucation sites. The goal is to begin working in pairs and groups, and do that all day. It’s a transition, but not a troubling one. Everyone I’ve worked with brings such high levels of energy, attention, patience and commitment. It’s inspiring.</p>
+                <p>One challenge that I didn’t expect to face in the first week was the teaching style at DBC. The last time I sat in a classroom was 15 years ago in a liberal arts college. This is an environment most of us know well. The teacher stands in front and offers some type of lecture on new material, encourages a bit of discussion with the students, and then assigns work at home which builds upon the lecture.</p>
+                <p>DBC begins with the work, and waits for students to ask their own questions, which may lead to a short lecture on portions of the material. At first, I was frustrated with the pattern. I felt like it was silly to have 10 pairs of students Googling the same things online for answers, when a single presentation or explanation at the beginning could have provided the same direction to all. I mean, we’re all looking for the same information, right?</p>
+                <p>I realized that’s not always true, once we started changing group partners and seeing others’ code. Each of us attacks these problems in different ways, at our own speed. The exploration process is important to our individual learning, and reflects DBC’s emphasis on the learning-to-learn model. Now, I don’t think every different solution is a good one, or a potentially good one. Nor do I think my solutions were all good ones. I know this isn’t creative writing. There may be a single best way to skin a cat. But sometimes you have to wander in the woods for a while before you can begin to ask questions about which way to go.</p>
+                <p>That said, once we identified issues that needed explaining, I feel DBC staff does a great job being responsive and providing lectures to the group on specific topics. It’s definitely an adjustment to sitting in this different kind of classroom.</p>
+                <p>On top of the learning, DBC places a big emphasis on emotional wellbeing and positive communication within the group. No doubt, this is a very stressful environment for many of us. We are required to participate in a series of activities that build team cohesion and encourage open feedback between individuals. This goes a long way to defuse much of the competitiveness and tension that naturally develops.</p>
+                <p>All in all, week one was something of a shock, but a positive intro to everything that will follow.</p>
+            </article>
+          </div>
+          <aside>
+            <div class="row-30 fl-right bkg-floral" ng-controller="blogPostCtrl">
+              <h3 class="article-padding">More Blogs</h3>
+              <ul class="no-list article-padding" ng-repeat="blogPost in blogPosts">
+                <li><a href="{{ blogPost.href }}">{{ blogPost.title }}</a></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </main>
+
+     <script>
+        angular.module('blogLinks', []).controller('blogPostCtrl', BlogPostCtrl);
+
+        function BlogPostCtrl($scope) {
+          $scope.blogPosts = blogPosts;
+        }
+
+      </script>
+
+      <aside>
+        <div class="row">
+          <h2 class="article-padding">Places | Pics</h2>
+          <div class="ht-md pic-cover brd-top brd-bottom">
+            <div class="label-box label-fit-landscape">
+              <a href="#" class="link-bold">
+                <p class="label-text">Pinnacles National Park</p>
+                <p class="label-text">Central California</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    <div class="spacer">
+    </div>
+
+      <footer>
+        <div class="footer">
+          <!-- social media links -->
+          <div class="center">
+            <ul class="social-links center">
+              <li><a href="https://www.linkedin.com/in/brianwagnerfilm"><img src="../imgs/linkedin.png" alt="linkedin link"></a></li>
+              <li><a href="https://github.com/hazelmaeby"><img src="../imgs/github.jpg" alt="github link"></a></li>
+              <li><a href="https://twitter.com/hazelmaeby"><img src="../imgs/twitter.jpg" alt="twitter link"></a></li>
+            </ul>
+          </div>
+          <p class="center">Made by Brian Wagner | &#169; 2015 | <a href="../contact.html">Contact</a></p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
