@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html ng-app="blogLinks">
+  <head>
+      <meta charset="utf-8" />
+      <title>Brian's Site</title>
+      <link rel="stylesheet" type="text/css" href="stylesheets/default.css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+      <script src="scripts/blog-links.js"></script>
+
+      <link rel="icon" type"image/png" href="imgs/bri_favicon.ico">
+    </head>
+
+  <body>
+    <div class="container">
+      <div id="header" class="brd-bottom">
+        <div class="row">
+          <div class="head-logo">
+            <a href="index.html">
+              <img src="imgs/b_logo2.jpg" alt="logo" class="logo-img">
+            </a>
+            <h2 class="disp-inline"><a href="index.html" class="no-link">Welcome to Brian's Site</a></h2>
+          </div>
+          <div class="head-links text-right">
+            <nav>
+              <a href="blog/index.html" class="navlink">Blog</a>
+              <a href="projects/index.html" class="navlink">Projects</a>
+              <a href="videos.html" class="navlink">Videos</a>
+              <a href="about.html" class="navlink">About</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="spacer bkg-white">
+      </div>
+
+      <main>
+        <div id="container-main" class="brd-bottom">
+          <div class="row">
+            <div class="fl-left half-row ht-lg" ng-controller="blogPostCtrl">
+              <div class="main-article-border ht-lg-pad">
+                <h1 class="article-header article-padding">Featured Blog Post</h1>
+                  <div ng-repeat="blogPost in blogPosts | limitTo:2">
+                    <h2 class="article-padding">{{ blogPost.title }}</h2>
+                    <p class="article-padding">Posted: {{ blogPost.date }}</p>
+                    <p class="article-padding">{{ blogPost.summary | limitTo:230 }} ...</p>
+                    <p class="article-padding"><a href="blog/{{ blogPost.href }}">More</a></p>
+                </div>
+              </div>
+            </div>
+            <!-- right-side main box -->
+              <div class="half-row main-article-border ht-lg-pad half-row-pic-cover">
+                <div class="pic-container-main">
+                  <div class="label-box label-fit-main">
+                    <a href="http://www.voanews.com/content/voa-correspondent-reports-on-latest-relief-efforts-in-haiti-81878067/111512.html" class="link-bold">
+                      <p class="label-text">Jacmel, Haiti</p>
+                      <p class="label-text">January 2010</p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="spacer bkg-white">
+              </div>
+          </div>
+        </div>
+      </main>
+
+      <div class="spacer">
+      </div>
+
+      <div class="row">
+        <div class="triplet center brd-full-primary round-box antique" ng-controller="blogPostCtrl">
+          <h2>Blog</h2>
+          <ul class="no-list" ng-repeat="blogPost in blogPosts | limitTo:2">
+            <li><a href="blog/{{ blogPost.href }}" class="link-bold">{{ blogPost.title }}</a></li>
+          </ul>
+        </div>
+
+        <div class="triplet center brd-full-primary round-box antique">
+          <h2>Projects</h2>
+          <ul class="no-list">
+              <li><a href="projects/raindrop/index.html" class="link-bold">Raindrop JS Game</a>
+              <li><a href="http://windowpanemedia.com/game" class="link-bold">Fast Football JS Game</a></li>
+          </ul>
+        </div>
+
+        <div class="triplet center brd-full-primary round-box antique">
+          <h2>Videos</h2>
+          <ul class="no-list">
+            <li><a href="videos.html" class="link-bold">Iraq Oil Doc</a></li>
+            <li><a href="videos.html#critical-mass" class="link-bold">Miami Critical Mass Timelapse</a></li>
+          </ul>
+          </div>
+      </div>
+
+      <script>
+        angular.module('blogLinks', []).controller('blogPostCtrl', BlogPostCtrl);
+
+        function BlogPostCtrl($scope) {
+          $scope.blogPosts = blogPosts;
+        }
+
+      </script>
+
+    <div class="spacer">
+      </div>
+
+      <aside>
+        <div class="row">
+          <h2 class="article-padding">Places</h2>
+          <div class="ht-md pic-cover brd-top brd-bottom">
+            <div class="label-box label-fit-landscape">
+              <a href="https://www.flickr.com/search/?text=pinnacles%20national%20park" class="link-bold">
+                <p class="label-text">Pinnacles National Park</p>
+                <p class="label-text">Central California</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    <div class="spacer">
+    </div>
+
+      <footer>
+        <div class="footer">
+          <!-- social media links -->
+          <div class="center">
+            <ul class="social-links center">
+              <li><a href="https://www.linkedin.com/in/brianwagnerfilm"><img src="imgs/linkedin.png" alt="linkedin link"></a></li>
+              <li><a href="https://github.com/hazelmaeby"><img src="imgs/github.jpg" alt="github link"></a></li>
+              <li><a href="https://twitter.com/hazelmaeby"><img src="imgs/twitter.jpg" alt="twitter link"></a></li>
+            </ul>
+          </div>
+          <p class="center">Made by Brian Wagner | &#169; 2015 | <a href="contact.html">Contact</a></p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,141 +1,215 @@
-<!DOCTYPE HTML>
-<html ng-app="blogLinks">
-  <head>
-      <meta charset="utf-8" />
-      <title>Brian's Site</title>
-      <link rel="stylesheet" type="text/css" href="stylesheets/default.css">
+<html>
+<head>
+  <title>Brian Wagner - Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="portfolio-style.css">
+</head>
+<body>
 
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-      <script src="scripts/blog-links.js"></script>
+<div class="container-fluid">
 
-      <link rel="icon" type"image/png" href="imgs/bri_favicon.ico">
-    </head>
+  <div class="row header">
+    <header class="col-md-12">
+      <nav>
+        <div class="col-md-6 col-md-offset-2">
+          <h1 class="centered">Brian Wagner</h1>
+          <h3 class="centered">Web developer | Media specialist</h3>
+          <ul class="no-list centered tech-list">
+            <li><a href="#drupal">Drupal</a></li>
+            <li><a href="#angular">Angular JS</a></li>
+            <li><a href="#javascript">Javascript</a></li>
+            <li><a href="#html5">HTML5 / CSS3</a></li>
+            <li><a href="http://windowpanemedia.com">Video</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <img src="portfolio-imgs/brianProfile_bw.jpg" class="personal-pic">
+        </div>
+      </nav>
+    </header>
+  </div>
 
-  <body>
-    <div class="container">
-      <div id="header" class="brd-bottom">
-        <div class="row">
-          <div class="head-logo">
-            <a href="index.html">
-              <img src="imgs/b_logo2.jpg" alt="logo" class="logo-img">
-            </a>
-            <h2 class="disp-inline"><a href="index.html" class="no-link">Welcome to Brian's Site</a></h2>
+  <div class="row">
+    <section class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 bio">
+      <h3 class="centered">About Me</h3>
+      <p>Web developer, especially drawn to front-end technologies like Javascript and CSS. Drawing on my background in journalism and multimedia production. As a former newsman, I'm passionate about the power of information and effective communication.
+      <h4 style="margin-top:20px">Technologies</h4>
+      <p class="indent-20"><strong>Drupal:</strong> Site builder since 2012. In addition to building Drupal sites, I've attended Florida Drupal camp, given presentations at Broward Drupal meetings, and translated Drupal curriculum from Spanish to English.</p>
+      <p class="indent-20"><strong>Angular JS:</strong> Newer addition to JS frameworks, Angular has an approach to MVC that I find easy to work with. Custom directives are very useful to segment DOM elements and deliver clean markup. </p>
+      <p class="indent-20"><strong>Javascript:</strong> Critical to all client-side endeavors, I've been working with Javascript for several years. Interesting projects include games using the Phaser library, and the Popcorn.js video toolset from Mozilla.</p>
+      <p class="indent-20"><strong>Ruby on Rails:</strong> Recently added Ruby and Rails to my toolkit through a bootcamp in Chicago in 2015. Rails is amazingly quick to develop an API server or SPA. I love the ability to get elbows-deep in code and spin up something quick.</p>
+    </section>
+  </div>
+
+<!-- drupal project -->
+  <div class="row lt-gray" id="drupal">
+    <section class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 project">
+      <div class="col-md-6">
+        <h4>Drupal 7 - Client Project</h4>
+        <img src="portfolio-imgs/drupal.png" class="icons" alt="Drupal logo">
+        <p>Features</p>
+        <ul>
+          <li>Built and deployed to AWS</li>
+          <li>Integrates Views, custom content, Panels pages</li>
+          <li>Custom theming elements: various tpl, preprocess functions</li>
+          <li>Custom CSS with Bootstrap module</li>
+        </ul>
+      </div>
+      <div class="col-md-6 centered">
+        <img src="portfolio-imgs/nacha.jpg" alt="Drupal site">
+<!--         <div class="row image-cap">
+          <div class="col-md-6">
+            <p>Code upon request</p>
           </div>
-          <div class="head-links text-right">
-            <nav>
-              <a href="blog/index.html" class="navlink">Blog</a>
-              <a href="projects/index.html" class="navlink">Projects</a>
-              <a href="videos.html" class="navlink">Videos</a>
-              <a href="about.html" class="navlink">About</a>
-            </nav>
+        </div> -->
+      </div>
+    </section>
+  </div>
+
+<!-- angular project example -->
+  <div class="row" id="angular">
+    <section class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 project">
+      <div class="col-md-6">
+        <h4>Angular JS - Project</h4>
+        <img src="portfolio-imgs/angular.png" class="icons" alt="Angular logo">
+        <p>Features</p>
+        <ul>
+          <li>Fetch movie theater listings by zip code</li>
+          <li>Fetch tv programs by date; filter by event type</li>
+          <li>Utilizes <a href="http://developer.tmsapi.com/">Gracenote</a> API tools </li>
+          <li>Clean data for presentation, scrub bad data, remediate duplicates, format data</li>
+          <li>Create NG-Directives to extract presentation components</li>
+          <li>Custom NG-Filters for dynamic filtering</li>
+        </ul>
+      </div>
+      <div class="col-md-6 centered">
+        <a href="http://windowpanemedia.com/resources/code/entertainment_guide/movies.html"><img src="portfolio-imgs/entertainment.jpg"></a>
+        <!-- caption row -->
+        <div class="row image-cap">
+          <div class="col-md-6">
+            <p class="centered"><a href="http://windowpanemedia.com/resources/code/entertainment_guide/movies.html">Live site</a></p>
+          </div>
+          <div class="col-md-6">
+            <p class="centered"><a href="https://github.com/briwagner/entertainment_guide">Code</a></p>
           </div>
         </div>
       </div>
+    </section>
+  </div>
 
-      <div class="spacer bkg-white">
+<!-- html5 example -->
+  <div class="row lt-gray" id="html5">
+    <section class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 project">
+      <div class="col-md-6">
+        <h4>HTML5 / CSS3 / Javascript - Client Project</h4>
+        <img src="portfolio-imgs/html5.jpg" class="icons" alt="HTML5 logo">
+        <p>Features</p>
+        <ul>
+          <li>Design, build and deploy</li>
+          <li>Custom CSS, design and Javascript implementation</li>
+          <li>Custom jQuery for dynamic loading video playlist</li>
+        </ul>
       </div>
-
-      <main>
-        <div id="container-main" class="brd-bottom">
-          <div class="row">
-            <div class="fl-left half-row ht-lg" ng-controller="blogPostCtrl">
-              <div class="main-article-border ht-lg-pad">
-                <h1 class="article-header article-padding">Featured Blog Post</h1>
-                  <div ng-repeat="blogPost in blogPosts | limitTo:2">
-                    <h2 class="article-padding">{{ blogPost.title }}</h2>
-                    <p class="article-padding">Posted: {{ blogPost.date }}</p>
-                    <p class="article-padding">{{ blogPost.summary | limitTo:230 }} ...</p>
-                    <p class="article-padding"><a href="blog/{{ blogPost.href }}">More</a></p>
-                </div>
-              </div>
-            </div>
-            <!-- right-side main box -->
-              <div class="half-row main-article-border ht-lg-pad half-row-pic-cover">
-                <div class="pic-container-main">
-                  <div class="label-box label-fit-main">
-                    <a href="http://www.voanews.com/content/voa-correspondent-reports-on-latest-relief-efforts-in-haiti-81878067/111512.html" class="link-bold">
-                      <p class="label-text">Jacmel, Haiti</p>
-                      <p class="label-text">January 2010</p>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="spacer bkg-white">
-              </div>
+      <div class="col-md-6 centered">
+        <a href="http://www.southbeachrelease.com"><img src="portfolio-imgs/southbeach.jpg" alt="HTML sample site"></a>
+        <div class="row image-cap">
+          <div class="col-md-6">
+            <p><a href="http://www.southbeachrelease.com">Live site</a></p>
           </div>
         </div>
-      </main>
-
-      <div class="spacer">
       </div>
+    </section>
+  </div>
 
+<!-- js examples -->
+  <div class="row" id='javascript'>
+
+    <section class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 project">
+      <div class="col-md-6">
+        <h4>Javascript - Projects</h4>
+        <img src="portfolio-imgs/jsLogo.jpg" class="icons" alt="Javascript logo">
+        <h4>Video Annotation</h4>
+        <p>Features</p>
+        <ul>
+          <li>Dynamically load videos and scripts</li>
+          <li>Auto-play and stop to write annotations</li>
+          <li>Records timecode where comments are entered</li>
+          <li>Builds on Mozilla's Popcorn JS library</li>
+        </ul>
+      </div>
+      <div class="col-md-6 centered">
+        <a href="http://windowpanemedia.com/videoNoter/"><img src="portfolio-imgs/noter.jpg" alt="Video noter screenshot"></a>
+        <!-- caption -->
+        <div class="row image-cap">
+          <div class="col-md-6">
+            <p><a href="http://windowpanemedia.com/videoNoter/">Live site</a></p>
+          </div>
+          <div class="col-md-6">
+            <p><a href="https://github.com/briwagner/videoNoter">Code</a></p>
+          </div>
+        </div>
+      </div>
       <div class="row">
-        <div class="triplet center brd-full-primary round-box antique" ng-controller="blogPostCtrl">
-          <h2>Blog</h2>
-          <ul class="no-list" ng-repeat="blogPost in blogPosts | limitTo:2">
-            <li><a href="blog/{{ blogPost.href }}" class="link-bold">{{ blogPost.title }}</a></li>
-          </ul>
-        </div>
-
-        <div class="triplet center brd-full-primary round-box antique">
-          <h2>Projects</h2>
-          <ul class="no-list">
-              <li><a href="projects/raindrop/index.html" class="link-bold">Raindrop JS Game</a>
-              <li><a href="http://windowpanemedia.com/game" class="link-bold">Fast Football JS Game</a></li>
-          </ul>
-        </div>
-
-        <div class="triplet center brd-full-primary round-box antique">
-          <h2>Videos</h2>
-          <ul class="no-list">
-            <li><a href="videos.html" class="link-bold">Iraq Oil Doc</a></li>
-            <li><a href="videos.html#critical-mass" class="link-bold">Miami Critical Mass Timelapse</a></li>
-          </ul>
-          </div>
+        <div class="col-lg-12 spacer"> </div>
       </div>
-
-      <script>
-        angular.module('blogLinks', []).controller('blogPostCtrl', BlogPostCtrl);
-
-        function BlogPostCtrl($scope) {
-          $scope.blogPosts = blogPosts;
-        }
-
-      </script>
-
-    <div class="spacer">
-      </div>
-
-      <aside>
-        <div class="row">
-          <h2 class="article-padding">Places</h2>
-          <div class="ht-md pic-cover brd-top brd-bottom">
-            <div class="label-box label-fit-landscape">
-              <a href="https://www.flickr.com/search/?text=pinnacles%20national%20park" class="link-bold">
-                <p class="label-text">Pinnacles National Park</p>
-                <p class="label-text">Central California</p>
-              </a>
-            </div>
-          </div>
-        </div>
-      </aside>
-
-    <div class="spacer">
+    <!-- js project two -->
+    <div class="col-md-6">
+      <h4>Fast Football Game</h4>
+      <p>Features</p>
+      <ul>
+        <li>Integrates jQuery UI library</li>
+        <li>Custom game logic tracks yards, play count, etc.</li>
+        <li>Designed graphics, illustrations</li>
+        <li>Design, build and deploy</li>
+      </ul>
     </div>
 
-      <footer>
-        <div class="footer">
-          <!-- social media links -->
-          <div class="center">
-            <ul class="social-links center">
-              <li><a href="https://www.linkedin.com/in/brianwagnerfilm"><img src="imgs/linkedin.png" alt="linkedin link"></a></li>
-              <li><a href="https://github.com/hazelmaeby"><img src="imgs/github.jpg" alt="github link"></a></li>
-              <li><a href="https://twitter.com/hazelmaeby"><img src="imgs/twitter.jpg" alt="twitter link"></a></li>
-            </ul>
-          </div>
-          <p class="center">Made by Brian Wagner | &#169; 2015 | <a href="contact.html">Contact</a></p>
+    <div class="col-md-6 centered">
+      <a href="http://windowpanemedia.com/game/"><img src="portfolio-imgs/football.jpg" alt="Fast football screenshot"></a>
+      <div class="row image-cap">
+        <div class="col-md-6">
+          <p><a href="http://windowpanemedia.com/game/">Live site</a></p>
         </div>
-      </footer>
+        <div class="col-md-6">
+          <p><a href="https://github.com/briwagner/fastFootball">Code</a></p>
+        </div>
+      </div>
     </div>
-  </body>
+
+    </section>
+  </div>
+
+  <div class="row lt-gray">
+    <footer class="col-md-12 footer">
+      <h3 class="centered">Brian Wagner</h3>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="col-md-4 centered">
+            <a href="https://www.linkedin.com/in/brianwagnerfilm">
+              <img src="portfolio-imgs/li.png" class="icons" alt="LinkedIn icon">
+              <p>LinkedIn</p>
+            </a>
+          </div>
+          <div class="col-md-4 centered">
+            <a href="https://github.com/briwagner">
+              <img src="portfolio-imgs/github.png" class="icons" alt="github icon">
+              <p>Github</p>
+            </a>
+          </div>
+          <div class="col-md-4 centered">
+            <a href="http://windowpanemedia.com">
+              <img src="portfolio-imgs/video.png" class="icons" alt="video icon">
+              <p>Video portfolio</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+</div>
+
+</body>
 </html>
