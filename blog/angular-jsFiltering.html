@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html ng-app="blogLinks">
+  <head>
+      <meta charset="utf-8" />
+      <title>Brian's Site</title>
+      <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+      <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+      <script src="../scripts/blog-links.js"></script>
+
+      <link rel="icon" type"image/png" href="../imgs/bri_favicon.ico">
+    </head>
+
+  <body>
+    <div class="container">
+      <div id="header" class="brd-bottom">
+        <div class="row">
+          <div class="head-logo">
+             <a href="../index.html">
+              <img src="../imgs/b_logo2.jpg" alt="logo" class="logo-img">
+             </a>
+            <h2 class="disp-inline"><a href="../index.html" class="no-link">Welcome to Brian's Site</a></h2>
+          </div>
+          <div class="head-links text-right">
+            <nav>
+              <a href="index.html" class="navlink">Blog</a>
+              <a href="../projects/index.html" class="navlink">Projects</a>
+              <a href="../videos.html" class="navlink">Videos</a>
+              <a href="../about.html" class="navlink">About</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+<!-- BLOG TEXT GOES HERE -->
+      <main>
+        <div class="row bkg-white brd-bottom">
+          <div class="row-70 fl-left">
+            <h1 class="article-padding">Blog Entries</h1>
+              <article class="article-padding">
+                <h1>Filtering for Angular JS</h1>
+                <h4>April 16, 2016</h4>
+
+                <p>Angular has its quirks.</p>
+                <p>It's smart enough to flag duplicates in an array of data, but not smart enough to tell me what to do with that problem, for instance. So I turn to vanilla JS for a solution. And en route, I'll take a detour to recall Javascript idiosyncrasies, after spending the last couple of months entrenched in Ruby.</p>
+                <p>My first stop is forEach(). This certainly has been helpful in wrangling data from an API call into useful Angular bits. But it doesn't work for everything. Why? It won't break. When it says 'for each' it really means <em>for each</em>, and it won't break out of the loop early just because you find what you're looking for.</p>
+                <p>What other options are available? every() is one. It tests if ALL of the elements in an array pass the test and returns true or false. Kind of an all or nothing proposition.</p>
+                <div class="code-well">
+                <pre>
+var basket = ['orange', 'kiwi', 'banana'];
+var citrus = ['lemon', 'orange', 'grapefruit'];
+
+function isCitrus(val) {
+  return citrus.includes(val);
+}
+
+var y = basket.every(isCitrus);
+
+console.log(y)</pre>
+              <p><em>=> false</em></p>
+               </div>
+                <p>some() is another. As you can guess, it's performing a similar check but only tells if you the condition is present at least once. Both of these functions return true/false.</p>
+                <div class="code-well">
+                  <pre>
+var basket = ['orange', 'kiwi', 'banana'];
+
+var citrus = ['lemon', 'orange', 'grapefruit'];
+
+function isCitrus(val) {
+  return citrus.includes(val);
+}
+
+var y = basket.some(isCitrus);
+
+console.log(y)</pre>
+                  <p><em>=> true</em></p>
+                </div>
+                <p>This is where my Ruby months play tricks on my mind. Are every() and some() part of those additions made as part of ECMA 2015? Is indexOf the only reliable partner I have in testing for elements? What is this newfangled includes() method? It can't have much support, can it??</p>
+                <p>In my blind allegiance to the past, I eschewed what seemed new and searched for something old. I found it in the tried and true for loop. What more could I need? Well, quite a bit actually.</p>
+            </article>
+          </div>
+          <aside>
+            <div class="row-30 fl-right bkg-floral" ng-controller="blogPostCtrl">
+              <h3 class="article-padding">More Blogs</h3>
+              <ul class="no-list article-padding" ng-repeat="blogPost in blogPosts">
+                <li><a href="{{ blogPost.href }}">{{ blogPost.title }}</a></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </main>
+
+     <script>
+        angular.module('blogLinks', []).controller('blogPostCtrl', BlogPostCtrl);
+
+        function BlogPostCtrl($scope) {
+          $scope.blogPosts = blogPosts;
+        }
+
+      </script>
+
+      <aside>
+        <div class="row">
+          <h2 class="article-padding">Places | Pics</h2>
+          <div class="ht-md pic-cover brd-top brd-bottom">
+            <div class="label-box label-fit-landscape">
+              <a href="#" class="link-bold">
+                <p class="label-text">Pinnacles National Park</p>
+                <p class="label-text">Central California</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    <div class="spacer">
+    </div>
+
+      <footer>
+        <div class="footer">
+          <!-- social media links -->
+          <div class="center">
+            <ul class="social-links center">
+              <li><a href="https://www.linkedin.com/in/brianwagnerfilm"><img src="../imgs/linkedin.png" alt="linkedin link"></a></li>
+              <li><a href="https://github.com/hazelmaeby"><img src="../imgs/github.jpg" alt="github link"></a></li>
+              <li><a href="https://twitter.com/hazelmaeby"><img src="../imgs/twitter.jpg" alt="twitter link"></a></li>
+            </ul>
+          </div>
+          <p class="center">Made by Brian Wagner | &#169; 2015 | <a href="../contact.html">Contact</a></p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
