@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html ng-app="blogLinks">
+  <head>
+      <meta charset="utf-8" />
+      <title>Brian's Site</title>
+      <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+      <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+      <script src="../scripts/blog-links.js"></script>
+
+      <link rel="icon" type"image/png" href="../imgs/bri_favicon.ico">
+    </head>
+
+  <body>
+    <div class="container">
+      <div id="header" class="brd-bottom">
+        <div class="row">
+          <div class="head-logo">
+             <a href="../index.html">
+              <img src="../imgs/b_logo2.jpg" alt="logo" class="logo-img">
+             </a>
+            <h2 class="disp-inline"><a href="../index.html" class="no-link">Welcome to Brian's Site</a></h2>
+          </div>
+          <div class="head-links text-right">
+            <nav>
+              <a href="index.html" class="navlink">Blog</a>
+              <a href="../projects/index.html" class="navlink">Projects</a>
+              <a href="../videos.html" class="navlink">Videos</a>
+              <a href="../about.html" class="navlink">About</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+<!-- BLOG TEXT GOES HERE -->
+      <main>
+        <div class="row bkg-white brd-bottom">
+          <div class="row-70 fl-left">
+            <h1 class="article-padding">Blog Entries</h1>
+              <article class="article-padding">
+                <h1>Duplicates in Angular JS</h1>
+                <h4>April 20, 2016</h4>
+                <p>Perfection is the enemy of done. And obsession is the lust for perfection</p>
+                <p>In that spirit, I've struggled to control my obsession to explore all the avenues for filtering in Angular. As we know, Angular doesn't like duplicate elements in your data array, so much so that it will fail obviously even when it's oft-stated nature is to fail silently.</p>
+                <p>So today's topic is filter(). It does what it says, just read the docs! But sometimes you read the docs, and other times you <em>really</em> read the docs. Today I did the latter.</p>
+                <div class="code-well">
+                  <pre>arr.every(callback[, thisArg])</pre>
+                </div>
+                <p>First, let's take that callback. We can provide an anonymous function</p>
+                <div class="code-well">
+                  <pre>
+var bears = ['grizzly', 'black', 'sun', 'panda'];
+
+var realBears = bears.filter(function(value) {return value != 'panda'} );
+
+console.log(realBears);
+
+=>  ["grizzly", "black", "sun"]</pre>
+                </div>
+                <p>... or provide a named function.</p>
+                <div class="code-well">
+                  <pre>
+function pandasAreNotReallyBears(value) {
+  return value != "panda"
+}
+
+var realBears = bears.filter(pandasAreNotReallyBears);
+
+console.log(realBears);
+
+=> ["grizzly", "black", "sun"]</pre>
+                </div>
+                <p>Got it. Going deeper, we see we have more than just <em>value</em> available to us in that function, whether it's named or not. We have <em>index</em> as well as the whole <em>array</em> itself. Even though I can't imagine a case to show the usefulness of that.</p>
+                <div class="code-well">
+                  <pre>
+function pandasAreNotReallyBears(value, index, array) {
+  console.log(array[index]);
+  return value != "panda"
+}</pre>
+                </div>
+                <p>Moving on, we have <em>thisArg</em>. Initially I thought that was some cool way I could modify the <em>value</em> of the iterator, like to pass in a property of the object instead of the entire object. That would have been useful for what I was doing with NG. Alas, it is not. It's just some other variable we can pass in and then refer to it as <em>this</em>.</p>
+                <p><em>This</em> is NOT the value we are passing in. Nor is it the array we are calling filter() on. Playing around in Firefox, I get some unexpected results for <em>this</em>.</p>
+                <div class="code-well">
+                  <pre>
+function pandasAreNotReallyBears(value, index, array) {
+  console.log(this);
+  return value != "panda"
+}
+
+var realBears = bears.filter(pandasAreNotReallyBears);
+
+=> Window about:newtab ...</pre>
+                </div>
+                <p>Uh ok. So <em>this</em> is the entire window. But if we declare something, <em>anything</em> in that spot, we get something more predictable.</p>
+                <div class="code-well">
+                  <pre>
+var message = 'yogi bear is a hungry bear';
+
+function pandasAreNotReallyBears(value, index, array) {
+  alert(this);
+  return value != "panda"
+}
+
+var realBears = bears.filter(pandasAreNotReallyBears, message);
+
+=> ... many alert messages</pre>
+                </div>
+                <p>What's more useful for me here, is to pass in another array that will store my unique values. Remember at the start, I'm trying to filter a data array and weed out the duplicate elements.</p>
+                <div class="code-well">
+                  <pre>
+var bears = ['grizzly', 'black', 'sun', 'panda', 'black'];
+
+var filteredBears = [];
+
+function uniqueBears(value) {
+  if(this.indexOf(value) === -1) {
+    this.push(value);
+  }
+}
+
+bears.filter(uniqueBears, filteredBears);
+
+console.log(filteredBears);
+
+=> ['grizzly', 'black', 'sun', 'panda']</pre>
+                </div>
+                <p>That's what I want to see. Now I just need to get rid of those pandas again!</p>
+            </article>
+          </div>
+          <aside>
+            <div class="row-30 fl-right bkg-floral" ng-controller="blogPostCtrl">
+              <h3 class="article-padding">More Blogs</h3>
+              <ul class="no-list article-padding" ng-repeat="blogPost in blogPosts">
+                <li><a href="{{ blogPost.href }}">{{ blogPost.title }}</a></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </main>
+
+     <script>
+        angular.module('blogLinks', []).controller('blogPostCtrl', BlogPostCtrl);
+
+        function BlogPostCtrl($scope) {
+          $scope.blogPosts = blogPosts;
+        }
+
+      </script>
+
+      <aside>
+        <div class="row">
+          <h2 class="article-padding">Places | Pics</h2>
+          <div class="ht-md pic-cover brd-top brd-bottom">
+            <div class="label-box label-fit-landscape">
+              <a href="#" class="link-bold">
+                <p class="label-text">Pinnacles National Park</p>
+                <p class="label-text">Central California</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    <div class="spacer">
+    </div>
+
+      <footer>
+        <div class="footer">
+          <!-- social media links -->
+          <div class="center">
+            <ul class="social-links center">
+              <li><a href="https://www.linkedin.com/in/brianwagnerfilm"><img src="../imgs/linkedin.png" alt="linkedin link"></a></li>
+              <li><a href="https://github.com/briwagner"><img src="../imgs/github.jpg" alt="github link"></a></li>
+              <li><a href="https://twitter.com/hazelmaeby"><img src="../imgs/twitter.jpg" alt="twitter link"></a></li>
+            </ul>
+          </div>
+          <p class="center">Made by Brian Wagner | &#169; 2015 | <a href="../contact.html">Contact</a></p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
