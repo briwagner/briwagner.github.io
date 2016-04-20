@@ -1,5 +1,17 @@
 var blogPosts = [
   {
+    href: 'angularDuplicates.html',
+    title: 'Duplicates in Angular JS',
+    summary: "Perfection is the enemy of done. And obsession is the lust for perfection. In that spirit, I've struggled to control my obsession to explore all the avenues for filtering in Angular. As we know, Angular doesn't like duplicate elements in your data array, so much so that it will fail obviously even when it's oft-stated nature is to fail silently.",
+    date: 'April 20, 2016'
+  },
+  {
+    href: 'angular-jsFiltering.html',
+    title: 'Filtering for Angular JS',
+    summary: "Angular has its quirks. It's smart enough to flag duplicates in an array of data, but not smart enough to tell me what to do with that problem, for instance. So I turn to vanilla JS for a solution. And en route, I'll take a detour to recall Javascript idiosyncrasies, after spending the last couple of months entrenched in Ruby.",
+    date: 'April 16, 2016'
+  },
+  {
     href: "campus-week1.html",
     title: "On Campus, Week 1",
     summary: "After much build-up, we made it to Chicago. The material in the first week focuses on what I call algorithms. Many of the tasks require stringing together phrases that we’ve learned into mini programs that can convert a string, test whether a word is a palindrome, or other simple tasks.",
