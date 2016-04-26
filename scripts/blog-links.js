@@ -1,5 +1,11 @@
 var blogPosts = [
   {
+    href: 'typescript.html',
+    title: 'Starting out in Typescript',
+    summary: "Everything I see about Angular 2 has a footnote attached to it. Well two really. First, it's not complete, and nobody's sure what it'll look like until it's done. Two, it often appears alongside the word Typescript. What's that?",
+    date: 'April 25, 2016'
+  },
+  {
     href: 'angularDuplicates.html',
     title: 'Duplicates in Angular JS',
     summary: "Perfection is the enemy of done. And obsession is the lust for perfection. In that spirit, I've struggled to control my obsession to explore all the avenues for filtering in Angular. As we know, Angular doesn't like duplicate elements in your data array, so much so that it will fail obviously even when it's oft-stated nature is to fail silently.",
