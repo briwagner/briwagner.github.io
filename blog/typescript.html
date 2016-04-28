@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html ng-app="blogLinks">
+  <head>
+      <meta charset="utf-8" />
+      <title>Brian's Site</title>
+      <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+      <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+      <script src="../scripts/blog-links.js"></script>
+
+      <link rel="icon" type"image/png" href="../imgs/bri_favicon.ico">
+    </head>
+
+  <body>
+    <div class="container">
+      <div id="header" class="brd-bottom">
+        <div class="row">
+          <div class="head-logo">
+             <a href="../index.html">
+              <img src="../imgs/b_logo2.jpg" alt="logo" class="logo-img">
+             </a>
+            <h2 class="disp-inline"><a href="../index.html" class="no-link">Welcome to Brian's Site</a></h2>
+          </div>
+          <div class="head-links text-right">
+            <nav>
+              <a href="index.html" class="navlink">Blog</a>
+              <a href="../projects/index.html" class="navlink">Projects</a>
+              <a href="../videos.html" class="navlink">Videos</a>
+              <a href="../about.html" class="navlink">About</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+<!-- BLOG TEXT GOES HERE -->
+      <main>
+        <div class="row bkg-white brd-bottom">
+          <div class="row-70 fl-left">
+            <h1 class="article-padding">Blog Entries</h1>
+              <article class="article-padding">
+                <h1>Starting out in Typescript</h1>
+                <h4>April 25, 2016</h4>
+                <p>Everything I see about Angular 2 has a footnote attached to it. Well two really. First, it's not complete, and nobody's sure what it'll look like until it's done. Two, it often appears alongside the word Typescript. What's that?</p>
+                <p>Well it's a version of Javacript that provides 'type', i.e. this variable is a String, that one is a Boolean. So Typescript begins its life as a typed version of JS and ends its life as standard JS, and in the middle is a compiler. Compilers can bring pain, or so I've heard from Java programmers. But also they can bring peace of mind for a dev who knows how to leverage it and catch problems before they are pushed to production code.</p>
+                <p>So using a compiler means first configuring a compiler. Let's do that. Fortunately, Microsoft's VS Code has some great tooling for that.</p>
+                <p>First step is to create a tsconfig.json file for our project. Once that filed is named, I can hit Ctrl-Space to get some code hints, and select the obvious and only choice: 'Compiler Options.'</p>
+                <p><strong>tsconfig.json</strong></p>
+                <div class="code-well">
+<pre>{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs"
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}              
+</pre>
+                  
+                </div>
+                <p>The default includes everything above except the "target" line, which I included here. There's a-whole-nother discussion we can have about the target options.</p>
+                <p>Now we can create a separate file in the same directory with our Typescript. The <a href="https://code.visualstudio.com/Docs/languages/typescript">setup from VS Code</a> gives us this example:</p>
+                <p><strong>demo.ts</strong></p>
+                <div class="code-well">
+<pre>class Startup {
+    public static main(): number {
+        console.log('Hello World');
+        return 0;
+    }
+}
+
+Startup.main();</pre>
+                </div>
+                <p>So already we can see we're not in Javascript land. "Class"? What's that? Before we get bogged down in that, let's keep moving and see how this becomes Javascript.</p>
+                <p>With our Typescript complete, we can hit F1 in VS Code and search for "Tasks: Configure Task Runner." That generates a new file, tasks.json, in a subdirectory.</p>
+                <p><strong>tasks.json</strong></p>
+                <div class="code-well">
+<pre>{
+    // See http://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "0.1.0",
+    "command": "tsc",
+    "isShellCommand": true,
+    "args": ["-p", "."],
+    "showOutput": "silent",
+    "problemMatcher": "$tsc"
+}</pre>
+                </div>
+                <p>Now with everything in place, we can compile! If the Typescript compiler isn't installed, do that and restart VS Code. If everything is right, we hit Ctrl-Shift-B and perform the build. Nothing may be apparent. Ctrl-Shift-M will open the message bar up top to see if any errors are reported. For our little example, it should be clean.</p>
+                <p>The end result is a Javascript file sitting in our directory next to that .ts file.</p>
+                <p><strong>demo.js</strong></p>
+                <div class="code-well">
+<pre>var Startup = (function () {
+    function Startup() {
+    }
+    Startup.main = function () {
+        console.log('Hello World');
+        return 0;
+    };
+    return Startup;
+}());
+Startup.main();</pre>
+                </div>
+                <p>It's cool that VS Code does all this for us, but we have options. From the command line we can compile that .ts file as well. Either way, we now have working javascript to integrate into a project.</p>
+            </article>
+          </div>
+          <aside>
+            <div class="row-30 fl-right bkg-floral" ng-controller="blogPostCtrl">
+              <h3 class="article-padding">More Blogs</h3>
+              <ul class="no-list article-padding" ng-repeat="blogPost in blogPosts">
+                <li><a href="{{ blogPost.href }}">{{ blogPost.title }}</a></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </main>
+
+     <script>
+        angular.module('blogLinks', []).controller('blogPostCtrl', BlogPostCtrl);
+
+        function BlogPostCtrl($scope) {
+          $scope.blogPosts = blogPosts;
+        }
+
+      </script>
+
+      <aside>
+        <div class="row">
+          <h2 class="article-padding">Places | Pics</h2>
+          <div class="ht-md pic-cover brd-top brd-bottom">
+            <div class="label-box label-fit-landscape">
+              <a href="#" class="link-bold">
+                <p class="label-text">Pinnacles National Park</p>
+                <p class="label-text">Central California</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    <div class="spacer">
+    </div>
+
+      <footer>
+        <div class="footer">
+          <!-- social media links -->
+          <div class="center">
+            <ul class="social-links center">
+              <li><a href="https://www.linkedin.com/in/brianwagnerfilm"><img src="../imgs/linkedin.png" alt="linkedin link"></a></li>
+              <li><a href="https://github.com/hazelmaeby"><img src="../imgs/github.jpg" alt="github link"></a></li>
+              <li><a href="https://twitter.com/hazelmaeby"><img src="../imgs/twitter.jpg" alt="twitter link"></a></li>
+            </ul>
+          </div>
+          <p class="center">Made by Brian Wagner | &#169; 2015 | <a href="../contact.html">Contact</a></p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
