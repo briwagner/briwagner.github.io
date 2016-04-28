@@ -1,3 +1,7 @@
+body {
+  font-family: 'Fira Sans', sans-serif;
+}
+
 .header {
   background: url('portfolio-imgs/landscape_md.jpg');
   background-size: cover;
@@ -67,10 +71,6 @@ section {
 
 .footer p {
   font-size: 1.2em;
-}
-
-body {
-  font-family: font-family: 'Fira Sans', sans-serif;
 }
 
 .centered {
