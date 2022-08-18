@@ -1,9 +1,7 @@
 <html>
 <head>
   <title>Brian Wagner - Portfolio</title>
-
   <link rel="icon" type="image/x-icon" href="imgs/bri_favicon.ico">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -18,13 +16,12 @@
       <nav>
         <div class="col-md-6 col-md-offset-2">
           <h1 class="centered">Brian Wagner</h1>
-          <h3 class="centered">Web developer | Media specialist</h3>
+          <h2 class="centered">Software developer</h2>
           <ul class="no-list centered tech-list">
+            <li><a href="#golang">Go</a></li>
             <li><a href="#drupal">Drupal</a></li>
-            <li><a href="#angular">Angular JS</a></li>
             <li><a href="#javascript">Javascript</a></li>
-            <li><a href="#html5">HTML5 / CSS3</a></li>
-              <li><a href="http://blog.windowpanemedia.com">Blog</a>
+            <li><a href="http://brianwagner.org">Blog</a>
           </ul>
         </div>
         <div class="col-md-3">
@@ -36,23 +33,49 @@
 
   <div class="row">
     <section class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 bio">
-      <h3 class="centered">About Me</h3>
-      <p>Web developer, especially drawn to front-end technologies like Javascript and CSS. Drawing on my background in journalism and multimedia production. As a former newsman, I'm passionate about the power of information and effective communication.
-      <h4 style="margin-top:20px">Technologies</h4>
-      <p class="indent-20"><strong>Drupal:</strong> Site builder since 2012. In addition to building Drupal sites, I've attended Florida Drupal camp, given presentations at Broward Drupal meetings, and translated Drupal curriculum from Spanish to English.</p>
-      <p class="indent-20"><strong>Angular JS:</strong> Newer addition to JS frameworks, Angular has an approach to MVC that I find easy to work with. Custom directives are very useful to segment DOM elements and deliver clean markup. </p>
-      <p class="indent-20"><strong>Javascript:</strong> Critical to all client-side endeavors, I've been working with Javascript for several years. Interesting projects include games using the Phaser library, and the Popcorn.js video toolset from Mozilla.</p>
-      <p class="indent-20"><strong>Ruby on Rails:</strong> Recently added Ruby and Rails to my toolkit through a bootcamp in Chicago in 2015. Rails is amazingly quick to develop an API server or SPA. I love the ability to get elbows-deep in code and spin up something quick.</p>
+      <h2 class="centered">About Me</h2>
+      <p>Software engineer with extensive experience in Go, Drupal and Javascript. Launched new e-commerce platforms, and content management systems. Lead developer on sites for consumer products, federal agencies and higher education. Strong experience with server management, cloud services, and Agile workflows. As a former newsman, I'm passionate about the power of information and effective communication.</p>
+      <h3>Technologies</h3>
+      <p><strong>Golang:</strong> Since 2018, I've been building Go applications with cloud-based lambdas or cloud functions to support large-scale systems. Want to learn a great web application framework that's written in Go? Follow my <a href="http://learnbuffalo.net">Learn Buffalo guides and videos</a> on building a web app with <a href="http://gobuffalo.io">Buffalo</a>.</p>
+      <p><strong>Drupal:</strong> Site builder since 2012. I've helped to build and maintain several large-scale Drupal sites, including e-commerce platforms. Also I've attended Drupalcons, Florida Drupal camp, given presentations at Broward Drupal meetings, and translated Drupal curriculum from Spanish to English.</p>
+      <p><strong>Javascript:</strong> Critical to all client-side endeavors, I've been working with Javascript for several years. Interesting projects include games using the Phaser library, and the Popcorn.js video toolset from Mozilla.</p>
     </section>
   </div>
 
-<!-- drupal project -->
-  <div class="row lt-gray" id="drupal">
+  <!-- golang buffalo projects-->
+  <div class="row project-block" id="golang">
     <section class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 project">
       <div class="col-md-6">
-        <h4>Drupal 7 - Client Project</h4>
+        <h3>Golang Project - Learn Buffalo</h3>
+        <img src="portfolio-imgs/Go_Logo_Blue.svg" class="icons" alt="Golang software language icon">
+        <p><strong>Features</strong></p>
+        <ul>
+          <li>Step-by-step guide to using the Buffalo web application framework.</li>
+          <li>Video lessons and written guides.</li>
+          <li>Intro the basics to RESTful application patterns.</li>
+          <li>Custom integrations with SendGrid and MongoDB.</li>
+          <li><a href="http://www.learnbuffalo.net">Learnbuffalo.net</a></li>
+        </ul>
+      </div>
+      <div class="col-md-6 centered">
+        <img src="portfolio-imgs/learn_buffalo_screenshot.png" alt="Learn buffalo website screenshot">
+        <!-- caption row -->
+        <div class="row image-cap">
+          <div class="col-md-6">
+            <p class="centered"><a href="http://www.learnbuffalo.net/">Live site</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- drupal project -->
+  <div class="row project-block" id="drupal">
+    <section class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 project">
+      <div class="col-md-6">
+        <h3>Drupal Project</h3>
         <img src="portfolio-imgs/drupal.png" class="icons" alt="Drupal logo">
-        <p>Features</p>
+        <p><strong>Features</strong></p>
         <ul>
           <li>Built and deployed to AWS</li>
           <li>Integrates Views, custom content, Panels pages</li>
@@ -62,40 +85,33 @@
       </div>
       <div class="col-md-6 centered">
         <img src="portfolio-imgs/nacha.jpg" alt="Drupal site">
-<!--         <div class="row image-cap">
-          <div class="col-md-6">
-            <p>Code upon request</p>
-          </div>
-        </div> -->
       </div>
     </section>
   </div>
 
 <!-- angular project example -->
-  <div class="row" id="angular">
+  <div class="row project-block" id="angular">
     <section class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 project">
       <div class="col-md-6">
-        <h4>Angular JS - Project</h4>
+        <h3>Angular Project - Free Entertainment Guide</h3>
         <img src="portfolio-imgs/angular.png" class="icons" alt="Angular logo">
-        <p>Features</p>
+        <p><strong>Features</strong></p>
         <ul>
-          <li>Fetch movie theater listings by zip code</li>
-          <li>Fetch tv programs by date; filter by event type</li>
-          <li>Utilizes <a href="http://developer.tmsapi.com/">Gracenote</a> API tools </li>
-          <li>Clean data for presentation, scrub bad data, remediate duplicates, format data</li>
-          <li>Create NG-Directives to extract presentation components</li>
-          <li>Custom NG-Filters for dynamic filtering</li>
+          <li>Angular frontend and Golang backend application</li>
+          <li>User auth using JWTs from the <a href="https://github.com/shaj13/go-guardian">Go-Guardian project</a></li>
+          <li>View new movie releases, look up movies in your area. Search for tv shows.</li>
+          <li><a href="http://www.free-entertainment-guide.com/">Free-entertainment-guide.com</a></li>
         </ul>
       </div>
       <div class="col-md-6 centered">
-        <a href="http://windowpanemedia.com/guide/"><img src="portfolio-imgs/entertainment.jpg"></a>
+        <a href="http://www.free-entertainment-guide.com"><img src="portfolio-imgs/feg_screenshot.png"></a>
         <!-- caption row -->
         <div class="row image-cap">
           <div class="col-md-6">
-            <p class="centered"><a href="http://windowpanemedia.com/guide/">Live site</a></p>
+            <p class="centered"><a href="http://www.free-entertainment-guide.com/">Live site</a></p>
           </div>
           <div class="col-md-6">
-            <p class="centered"><a href="https://github.com/briwagner/entertainment_guide">Code</a></p>
+            <p class="centered"><a href="https://github.com/briwagner/free-ent-guide">Code</a></p>
           </div>
         </div>
       </div>
@@ -103,12 +119,12 @@
   </div>
 
 <!-- html5 example -->
-  <div class="row lt-gray" id="html5">
+  <div class="row project-block" id="javascript">
     <section class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 project">
       <div class="col-md-6">
-        <h4>HTML5 / CSS3 / Javascript - Client Project</h4>
+        <h3>HTML5 Video Project</h3>
         <img src="portfolio-imgs/html5.jpg" class="icons" alt="HTML5 logo">
-        <p>Features</p>
+        <p><strong>Features</strong></p>
         <ul>
           <li>Design, build and deploy</li>
           <li>Custom CSS, design and Javascript implementation</li>
@@ -123,64 +139,6 @@
           </div>
         </div>
       </div>
-    </section>
-  </div>
-
-<!-- js examples -->
-  <div class="row" id='javascript'>
-
-    <section class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 project">
-      <div class="col-md-6">
-        <h4>Javascript - Projects</h4>
-        <img src="portfolio-imgs/jsLogo.jpg" class="icons" alt="Javascript logo">
-        <h4>Video Annotation</h4>
-        <p>Features</p>
-        <ul>
-          <li>Dynamically load videos and scripts</li>
-          <li>Auto-play and stop to write annotations</li>
-          <li>Records timecode where comments are entered</li>
-          <li>Builds on Mozilla's Popcorn JS library</li>
-        </ul>
-      </div>
-      <div class="col-md-6 centered">
-        <a href="http://windowpanemedia.com/videoNoter/"><img src="portfolio-imgs/noter.jpg" alt="Video noter screenshot"></a>
-        <!-- caption -->
-        <div class="row image-cap">
-          <div class="col-md-6">
-            <p><a href="http://windowpanemedia.com/videoNoter/">Live site</a></p>
-          </div>
-          <div class="col-md-6">
-            <p><a href="https://github.com/briwagner/videoNoter">Code</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12 spacer"> </div>
-      </div>
-    <!-- js project two -->
-    <div class="col-md-6">
-      <h4>Fast Football Game</h4>
-      <p>Features</p>
-      <ul>
-        <li>Integrates jQuery UI library</li>
-        <li>Custom game logic tracks yards, play count, etc.</li>
-        <li>Designed graphics, illustrations</li>
-        <li>Design, build and deploy</li>
-      </ul>
-    </div>
-
-    <div class="col-md-6 centered">
-      <a href="http://windowpanemedia.com/game/"><img src="portfolio-imgs/football.jpg" alt="Fast football screenshot"></a>
-      <div class="row image-cap">
-        <div class="col-md-6">
-          <p><a href="http://windowpanemedia.com/game/">Live site</a></p>
-        </div>
-        <div class="col-md-6">
-          <p><a href="https://github.com/briwagner/fastFootball">Code</a></p>
-        </div>
-      </div>
-    </div>
-
     </section>
   </div>
 
@@ -202,11 +160,16 @@
             </a>
           </div>
           <div class="col-md-4 centered">
-            <a href="http://windowpanemedia.com">
-              <img src="portfolio-imgs/video.png" class="icons" alt="video icon">
-              <p>Video portfolio</p>
+            <a href="http://learnbuffalo.net">
+              <img src="portfolio-imgs/learn_buffalo_banner.jpg" class="icons" alt="Learn Buffalo graphic">
+              <p>Learn Buffalo</p>
             </a>
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 centered">
+          <h6>Last update: August 2022</h6>
         </div>
       </div>
     </footer>

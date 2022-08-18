@@ -1,5 +1,6 @@
 body {
   font-family: 'Fira Sans', sans-serif;
+  font-size: 16px;
 }
 
 .header {
@@ -18,7 +19,8 @@ body {
 }
 
 .header a:hover {
-  text-shadow: 2px 2px 4px #333;
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 .personal-pic {
@@ -35,8 +37,18 @@ section {
   padding-bottom: 20px;
 }
 
+section p {
+  font-size: 1.15em;
+  line-height: 1.35em;
+  margin-bottom: 15px;
+}
+
 .bio {
   margin-bottom: 55px;
+}
+
+.bio h3 {
+  margin: 1em 0;
 }
 
 .project {
@@ -51,13 +63,34 @@ section {
   border-radius: 1%
 }
 
+.project-block {
+  background-color: rgba(204, 204, 204, 0.4);
+}
+
+.project-block:nth-child(even) {
+  background-color: inherit;
+}
+
+.project ul {
+  padding-left: 0;
+  list-style-position: inside;
+}
+
+.project li {
+  font-size: 1.15em;
+}
+
+.project h3 {
+  margin-top: 0;
+}
+
 .lt-gray {
   background-color: rgba(204, 204, 204, 0.4);
 }
 
 .footer {
   border-top: 2px solid orange;
-  padding: 15px 0 55px;
+  padding: 15px 0;
 }
 
 .footer h2, .footer h3, .footer h4 {
@@ -106,24 +139,6 @@ section {
 
 section, footer {
   color: #003366;
-}
-
-section p {
-  font-size: 1.15em;
-  line-height: 1.28em;
-  margin-bottom: 15px;
-}
-
-.project li {
-  font-size: 1.15em;
-}
-
-.project h4 {
-  margin-top: 0;
-}
-
-.indent-20 {
-  margin-left: 20px;
 }
 
 .image-cap p {
